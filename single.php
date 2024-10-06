@@ -1,3 +1,4 @@
+<?php get_header(); ?>
 <!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
 
 <!-- wp:group {"tagName":"main","align":"full"} -->
@@ -47,3 +48,5 @@
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->
+<?php
+get_footer();?>
