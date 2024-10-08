@@ -2,9 +2,7 @@
 get_header();
 ?>
 <main>
-<div class="wrapper">
-    
-</div></main>
+</main>
 
 
 <?php get_footer(); 

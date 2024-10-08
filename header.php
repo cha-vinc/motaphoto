@@ -18,27 +18,24 @@
 <body>
 
 <header>
-        <!-- Logo de l'en-tête -->
         <div class="header-logo">
             <?php
             $custom_logo_id = get_theme_mod('custom_logo');
             $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
             ?>
             <a href="<?php echo home_url(); ?>">
-                <img src="/motaphoto/wp-content/uploads/2024/10/logo.png" alt="Logo">
+                <img class="logo-dimension" src="<?php echo $logo[0] ?>" alt="Logo">
             </a>
         </div>
-        <nav class="header-menu">
-           
-    
+        <nav class="header-menu">  
                
         <?php
-            // Affiche | Menu de navigation en utilisant un emplacement de thème nommé 'main-menu'
+        // Affiche le menu du header
             wp_nav_menu([
                 'theme_location' => 'main-menu',
                 'container'      => false
             ]);?>
-            
+            <!--   Affiche le modal de contact-->
             <?php include get_template_directory() . '/template-parts/modale-contact.php'; ?>
 
         </nav>
