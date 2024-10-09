@@ -11,17 +11,14 @@ function register_footer_menu() {
 }
 add_action( 'after_setup_theme', 'register_footer_menu' );
 
-// Styles
-function motaphoto_styles() {
+function motaphoto_enqueue_assets() {
+    // Styles
     wp_enqueue_style('theme-css', get_template_directory_uri() . '/css/theme.css', array(), '1.0', 'all');
+    // Scripts
+    wp_enqueue_script('header-modal-contact', get_template_directory_uri() . '/js/header-modal-contact.js', array('jquery'), '1.1.1', true);
 }
-add_action('wp_enqueue_scripts', 'motaphoto_styles');
+add_action('wp_enqueue_scripts', 'motaphoto_enqueue_assets');
 
-// Scripts
-function motaphoto_script() {
-    wp_enqueue_script('script', get_stylesheet_directory_uri() . '/js/scripts.js', array(), null, true);
-}
-add_action('wp_enqueue_script', 'motaphoto_script');
 
 function motaphoto_theme_support() {
 
