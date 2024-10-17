@@ -11,6 +11,7 @@
 
 <?php wp_footer(); ?>
 
+<!-- Mettre js script ici -->
 
 </body>
 </html>

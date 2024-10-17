@@ -75,9 +75,7 @@ get_header(); ?>
         <!-- Section : Informations de la Photo - Contenu à droite -->
         <div class="right-container">
         <?php if (has_post_thumbnail()) : ?>
-                <a data-href="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'large')[0]; ?>" class="photo">
-                    <?php the_post_thumbnail(); ?>
-                </a>
+             <?php the_post_thumbnail('large'); ?>
         <?php endif; ?>
         </div>
     </div>
