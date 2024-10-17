@@ -152,3 +152,15 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* MODÈLE - ARTICLE */
+
+main {
+    padding: 57px 20px 20px 20px;
+    font-family: 'Space Mono';
+}
+
+.main-content-post {
+    margin: 0 auto;
+    max-width: 800px;
+}

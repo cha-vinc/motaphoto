@@ -14,6 +14,7 @@ add_action( 'after_setup_theme', 'register_footer_menu' );
 function motaphoto_enqueue_assets() {
     // Styles
     wp_enqueue_style('theme-css', get_template_directory_uri() . '/css/theme.css', array(), '1.0', 'all');
+    wp_enqueue_style('custom-single-photo-css', get_template_directory_uri() . '/css/single-photo.css', array(), '1.0', 'all');
     // Scripts
     wp_enqueue_script('header-modal-contact', get_template_directory_uri() . '/js/header-modal-contact.js', array('jquery'), '1.1.1', true);
 }
