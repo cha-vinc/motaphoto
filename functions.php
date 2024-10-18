@@ -21,11 +21,18 @@ function motaphoto_enqueue_assets() {
     // Styles
     wp_enqueue_style('theme-css', get_template_directory_uri() . '/css/theme.css', array(), '1.0');
     wp_enqueue_style('custom-single-photo-css', get_template_directory_uri() . '/css/single-photo.css', array(), '1.0');
-    
+    wp_enqueue_style('custom-modal-contact', get_template_directory_uri() . '/css/modal-contact.css', array(), '1.0');
     // Scripts
     wp_enqueue_script('header-modal-contact', get_template_directory_uri() . '/js/header-modal-contact.js', array('jquery'), '1.1.1', true); // Ajout de 'jquery' et chargement dans le footer
 }
 add_action('wp_enqueue_scripts', 'motaphoto_enqueue_assets', 99);
+
+/* Intégration des Google Fonts */
+function motaphoto_enqueue_google_fonts() {
+    wp_enqueue_style( 'Poppins', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', false );
+    wp_enqueue_style('Space mono', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap', false);
+}
+add_action( 'wp_enqueue_scripts', 'motaphoto_enqueue_google_fonts' );
 
 
 function motaphoto_theme_support() {
