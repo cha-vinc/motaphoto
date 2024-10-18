@@ -74,9 +74,11 @@ get_header(); ?>
         </div>
         <!-- Section : Informations de la Photo - Contenu à droite -->
         <div class="right-container">
-        <?php if (has_post_thumbnail()) : ?>
-             <?php the_post_thumbnail('large'); ?>
-        <?php endif; ?>
+            <div class="photo">
+                <?php if (has_post_thumbnail()) : ?>
+                     <?php the_post_thumbnail('large'); ?>
+            <?php endif; ?> 
+            </div>
         </div>
     </div>
 
@@ -89,7 +91,15 @@ get_header(); ?>
             </div>
             <div class="bouton-contact">
                 <?php include get_template_directory() . '/template-parts/contact-single-photo.php'; ?>
-
+                <?php
+                // Récupère la valeur du champ personnalisé 'reference_photo' et la définit comme une variable JavaScript.
+                $reference_photo = get_field('reference');
+                if ($reference_photo) {
+                    echo '<script type="text/javascript">';
+                    echo 'var acfReferencePhoto = "' . esc_js($reference_photo) . '";';
+                    echo '</script>';
+                }
+                ?>
             </div>
         </div>
 
