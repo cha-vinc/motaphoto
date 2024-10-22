@@ -26,3 +26,44 @@
     max-width: 100%;
     height: auto;
 }
+
+
+/* Catégorie et filtre - Homepage */
+.filtre-tri {
+    max-width: 1126px;  /* Largeur maximale - Section Filtres */
+    margin: 0 auto;  
+    text-align: center;  
+    padding-top: 40px; 
+    display: flex; 
+    justify-content: start;
+}
+
+.filtre-tri label, .filtre-tri select {
+    font-family: 'Poppins';  
+    font-size: 12px;  
+    font-weight: 500;  
+    line-height: 18px;  
+    letter-spacing: 0.03em;  
+    text-align: left;  
+    text-transform: uppercase;  
+}
+
+#filtre-categorie{
+    margin-right: 42px;
+}
+
+#tri-date{
+    margin-left: 310px;
+}
+
+#filtre-categorie,
+#filtre-format,
+#tri-date{
+    width: 260px;  
+    height: 42px;  
+    padding: 11px 18px 11px 18px;  
+    margin-bottom: 20px; 
+    border-radius: 8px;  
+    border: 1.3px solid #B8BBC2;  
+    justify-content: space-between;
+}

@@ -28,6 +28,48 @@ get_header();
 
     <?php wp_reset_postdata(); // Réinitialiser | Données de publication à leur état d'origine ?>
 </div>
+
+<!-- Filtres du catalogue photo -->
+<div class="filtre-tri">
+    <!-- Categorie -->
+    <label for="filtre-categorie"></label>
+    <select name="filtre-categorie" id="filtre-categorie">
+        <option value="ALL">CATÉGORIE</option>
+        <?php
+        $photo_categories = get_terms('categorie');
+        foreach ($photo_categories as $category) {
+            echo '<option value="' . $category->slug . '">' . $category->name . '</option>';
+        }
+        ?>
+    </select>
+    
+    <!-- Format -->
+    <label for="filtre-format"></label>
+    <select name="filtre-format" id="filtre-format">
+        <option value="ALL">FORMAT</option>
+        <?php
+        $photo_formats = get_terms('format');
+        foreach ($photo_formats as $format) {
+            echo '<option value="' . $format->slug . '">' . $format->name . '</option>';
+        }
+        ?>
+    </select>
+
+    <!-- Trier par date -->
+    <label for="tri-date"></label>
+    <select name="tri-date" id="tri-date">
+        <option value="ALL">TRIER PAR</option>
+        <option value="DESC">Du plus récent au plus ancien</option>
+        <option value="ASC">Du plus ancien au plus récent</option>
+    </select>
+</div>
+
+<!-- Bloc de photos / reprise du template part du fichier single-photo.php-->
+<div id="photo-container">
+    <?php include get_template_directory() . '/template-parts/photo-block.php'; ?>
+</div>
+
+
 </main>
 
 
