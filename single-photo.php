@@ -1,13 +1,10 @@
 <?php 
-/* template page pour présentation d'une photo*/
 get_header(); ?>
 
-
-<!-- Main - single-photo -->
 <main id="main" class="content-area">
     <div class="zone-contenu mobile-first">
 
-        <!-- Section : Informations de la Photo - Contenu à gauche-->
+        <!-- Informations de la Photo - Gauche-->
         <div class="left-container">
             <div class="left-contenu">
                 <h1><?php the_title(); ?></h1>
@@ -72,7 +69,7 @@ get_header(); ?>
                 ?>
             </div>
         </div>
-        <!-- Section : Informations de la Photo - Contenu à droite -->
+        <!-- Informations de la Photo - Droit -->
         <div class="right-container">
             <div class="photo">
                 <?php if (has_post_thumbnail()) : ?>
@@ -82,7 +79,7 @@ get_header(); ?>
         </div>
     </div>
 
-     <!-- Section : Bouton de contact + Navigation Photos -->
+     <!-- Bouton de contact + Navigation Photos -->
      <div class="zone-contact">
         <!-- Bouton de Contact -->
         <div class="left-contact">
@@ -139,7 +136,9 @@ get_header(); ?>
             <!-- Miniatures individuelles -->
             <div class="thumbnail-container">
                 <div class="thumbnail-wrapper">
-                    <!-- Initialement, le contenu de la miniature sera vide -->
+                    <img src="<?php echo esc_url($prev_thumbnail_url); ?>" alt="Précédent" class="thumbnail-img" />    
+                    <img src="<?php echo esc_url($next_thumbnail_url); ?>" alt="Suivant" class="thumbnail-img" />
+
                 </div>
                 <a href="<?php echo esc_url($prev_permalink); ?>" class="arrow-link" data-thumbnail="<?php echo esc_url(get_the_post_thumbnail_url($prev_post, 'thumbnail')); ?>" id="prev-arrow-link">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fleche-gauche.png" alt="Précédent" class="arrow-img-gauche" id="prev-arrow" />

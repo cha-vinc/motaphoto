@@ -1,0 +1,28 @@
+/* IMAGE HERO - ACCUEIL */
+/* Style | Conteneur Hero Image */
+.principal-head {
+    position: relative;
+    height: 782px;
+    width: 100vw; /*Pour prendre toute la largeur de l'écran*/
+    margin: 0;
+    padding: 0;
+}
+
+/* Style | Hero Image */
+.home-image {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+    background-image: url('/assets/images/fallback-hero.png'); /* Image de secours */
+}
+
+/* Style | Titre de l'Image */
+.home-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
+}

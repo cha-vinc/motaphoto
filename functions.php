@@ -20,6 +20,7 @@ add_action( 'after_setup_theme', 'register_footer_menu' );
 function motaphoto_enqueue_assets() {
     // Styles
     wp_enqueue_style('theme-css', get_template_directory_uri() . '/css/theme.css', array(), '1.0');
+    wp_enqueue_style('custom-index-css', get_template_directory_uri() . '/css/index.css', array(), '1.0');
     wp_enqueue_style('custom-single-photo-css', get_template_directory_uri() . '/css/single-photo.css', array(), '1.0');
     wp_enqueue_style('custom-modal-contact', get_template_directory_uri() . '/css/modal-contact.css', array(), '1.0');
     wp_enqueue_style('custom-photo-block', get_template_directory_uri() . '/css/photo-block.css', array(), '1.0');
