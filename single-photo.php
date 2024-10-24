@@ -2,6 +2,7 @@
 get_header(); ?>
 
 <main id="main" class="content-area">
+    <section class ="contenu-principal">
     <div class="zone-contenu mobile-first">
 
         <!-- Informations de la Photo - Gauche-->
@@ -136,8 +137,8 @@ get_header(); ?>
             <!-- Miniatures individuelles -->
             <div class="thumbnail-container">
                 <div class="thumbnail-wrapper">
-                    <img src="<?php echo esc_url($prev_thumbnail_url); ?>" alt="Précédent" class="thumbnail-img" />    
-                    <img src="<?php echo esc_url($next_thumbnail_url); ?>" alt="Suivant" class="thumbnail-img" />
+                    <img src="<?php echo esc_url($prev_thumbnail); ?>" alt="Précédent" class="thumbnail-img" />    
+                    <img src="<?php echo esc_url($next_thumbnail); ?>" alt="Suivant" class="thumbnail-img" />
 
                 </div>
                 <a href="<?php echo esc_url($prev_permalink); ?>" class="arrow-link" data-thumbnail="<?php echo esc_url(get_the_post_thumbnail_url($prev_post, 'thumbnail')); ?>" id="prev-arrow-link">
@@ -151,7 +152,7 @@ get_header(); ?>
             </div>
         </div>
     </div>
-
+    </section>        
     <!-- Section Photos Apparentées -->
     <div class="related-images">
         <h3>VOUS AIMEREZ AUSSI</h3>

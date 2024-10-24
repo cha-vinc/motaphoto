@@ -3,7 +3,7 @@
 .principal-head {
     position: relative;
     height: 782px;
-    width: 100vw; /*Pour prendre toute la largeur de l'écran*/
+    width: 100%; 
     margin: 0;
     padding: 0;
 }
