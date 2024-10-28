@@ -131,15 +131,13 @@ get_header(); ?>
 
             // Récupère les miniatures des publications précédentes et suivantes.
 
-            $prev_thumbnail = get_the_post_thumbnail($prev_post, 'thumbnail');
-            $next_thumbnail = get_the_post_thumbnail($next_post, 'thumbnail');
+            $prev_thumbnail = get_the_post_thumbnail_url($prev_post, 'thumbnail');
+            $next_thumbnail = get_the_post_thumbnail_url($next_post, 'thumbnail');
             ?>
             <!-- Miniatures individuelles -->
             <div class="thumbnail-container">
                 <div class="thumbnail-wrapper">
-                    <img src="<?php echo esc_url($prev_thumbnail); ?>" alt="Précédent" class="thumbnail-img" />    
-                    <img src="<?php echo esc_url($next_thumbnail); ?>" alt="Suivant" class="thumbnail-img" />
-
+                    
                 </div>
                 <a href="<?php echo esc_url($prev_permalink); ?>" class="arrow-link" data-thumbnail="<?php echo esc_url(get_the_post_thumbnail_url($prev_post, 'thumbnail')); ?>" id="prev-arrow-link">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fleche-gauche.png" alt="Précédent" class="arrow-img-gauche" id="prev-arrow" />
@@ -184,7 +182,7 @@ get_header(); ?>
                 <?php the_post_thumbnail(); ?>
                 <!-- Section | Overlay Catalogue -->
                     <div class="thumbnail-overlay-single">
-                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_eye.png" alt="Icône de l'œil"> <!-- Icône de l'œil | Information Photo -->
+                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-eye.png" alt="Icône de l'œil"> <!-- Icône de l'œil | Information Photo -->
                          <i class="fas fa-expand-arrows-alt fullscreen-icon"></i><!-- Icône plein écran -->
                         <?php
                         // Récupère la référence et la catégorie de l'image associée.

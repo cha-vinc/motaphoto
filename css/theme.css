@@ -3,6 +3,11 @@ body {
     background-color: #FFFFFF;
 }
 
+main {
+    padding: 57px 0 20px 0;
+    font-family: 'Space Mono';
+}
+
 
 /* Styles | En-Tête */
 header {
@@ -119,10 +124,7 @@ footer {
 
 /* MODÈLE - ARTICLE */
 
-main {
-    padding: 57px 0 20px 0;
-    font-family: 'Space Mono';
-}
+
 
 .main-content-post {
     margin: 0 auto;

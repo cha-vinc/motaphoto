@@ -48,6 +48,20 @@
     text-transform: uppercase;  
 }
 
+.filtre-tri select {
+    background-color: white;
+    color: black;
+}
+
+/* Styles pour simuler le changement de couleur sur les options */
+.filtre-tri select option:hover {
+    background-color: #E00000;
+    color: white;
+}
+
+
+
+
 #filtre-categorie{
     margin-right: 42px;
 }
@@ -67,3 +81,4 @@
     border: 1.3px solid #B8BBC2;  
     justify-content: space-between;
 }
+

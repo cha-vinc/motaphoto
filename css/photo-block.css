@@ -111,3 +111,14 @@
     background-color: #000000; 
 }
 
+/* Positionnement titre et catégorie au hover*/
+.photo-info-left{
+    display: flex;
+    justify-content: space-around !important;
+}
+
+.photo-info-right{
+    display: flex;
+    justify-content: flex-end !important ;
+    padding-right: 25px;
+}

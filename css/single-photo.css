@@ -208,9 +208,7 @@
     transform: scale(1.2);
 }
 
-#prev-arrow-link{
-    text-decoration: NONE;
-}
+
 
 /* Styles | Conteneur des miniatures */
 .thumbnail-container {
@@ -237,6 +235,27 @@
     display: block;
     margin-top: -8px;
     margin-left: 54px;
+}
+
+/* Styles | Thumbnail Image Wrapper */
+.thumbnail-wrapper {
+    position: relative;  /* Établit un contexte de positionnement pour les éléments enfants */
+    overflow: hidden;  /* Cache le contenu débordant de la zone définie */
+    padding-bottom: 100%; 
+}
+
+/* Styles | Thumbnail Image */
+.thumbnail-wrapper img {
+    position: absolute; 
+    top: 0;  /* Aligne l'image en haut */
+    left: 0;  /* Aligne l'image à gauche */
+    width: 100%; 
+    height: 100%;  
+    object-fit: cover;  /* Couvrir tout l'espace sans déformation */
+}
+
+.thumbnail-wrapper:hover {
+    opacity: 1;  /* Survolé, l'overlay devient opaque */
 }
 
 /* Styles | Section des images liées */
