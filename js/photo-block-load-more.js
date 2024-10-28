@@ -1,26 +1,27 @@
-jQuery(document).ready(function($) {
-    let page = 2;
+document.addEventListener('DOMContentLoaded', function() {
+    let page = 2; // La page commence à 2 car la première est déjà chargée
 
-    $('#load-more-posts').on('click', function() {
-        $.ajax({
-            url: ajaxurl, // Utilise la variable `ajaxurl` fournie par WordPress
-            type: 'POST',
-            data: {
+    document.getElementById('load-more-posts').addEventListener('click', function() {
+        // Envoie une requête AJAX
+        fetch(ajaxurl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
                 action: 'load_more_photos',
                 page: page
-            },
-            success: function(data) {
-                $('.thumbnail-container-accueil').append(data);
-                page++; // Incrémente la page
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+            const container = document.querySelector('.thumbnail-container-accueil');
+            container.insertAdjacentHTML('beforeend', data);
+            page++; // Incrémente la page
 
-                // Cacher le bouton si plus de photos
-                if (data.includes('no-more-posts')) {
-                    $('#load-more-posts').hide();
-                }
-            },
-            error: function(error) {
-                console.log('Erreur AJAX :', error);
+            // Cache le bouton si plus de photos disponibles
+            if (data.includes('no-more-posts')) {
+                document.getElementById('load-more-posts').style.display = 'none';
             }
-        });
+        })
+        .catch(error => console.error('Erreur : ', error));
     });
 });

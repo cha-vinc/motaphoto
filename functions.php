@@ -31,7 +31,7 @@ function motaphoto_enqueue_assets() {
     wp_enqueue_script('couleur-filtre', get_template_directory_uri() . '/js/index-filtre.js', array('jquery'), '1.1.1', true);
     wp_enqueue_script('load-more', get_template_directory_uri() . '/js/photo-block-load-more.js', array('jquery'), '1.1.1', true);
     wp_localize_script('load-more', 'ajaxurl', admin_url('admin-ajax.php'));
-
+    wp_enqueue_script('infinite-pagination', get_template_directory_uri() . '/js/infinite-pagination.js', array('jquery'), '1.1.1', true);
 }
 add_action('wp_enqueue_scripts', 'motaphoto_enqueue_assets', 99);
 
@@ -58,6 +58,14 @@ function motaphoto_theme_support() {
 }
 add_action('after_setup_theme', 'motaphoto_theme_support');
 
+// Ajout du fichier JavaScript (Pagination infinie - Bloc Photo)
+function enqueue_infinite_pagination_js() {
+    wp_enqueue_script('infinite-pagination', get_template_directory_uri() . '/js/infinite-pagination.js', array('jquery'), '', true);
+    wp_localize_script('infinite-pagination', 'wp_data', array('ajax_url' => admin_url('admin-ajax.php')));
+}
+add_action('wp_enqueue_scripts', 'enqueue_infinite_pagination_js');
+
+// Fonction pour le bouchon "Charger plus" dans la page d'accueil
 function load_more_photos() {
     // Récupère le numéro de page depuis la requête AJAX
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
@@ -109,7 +117,6 @@ function load_more_photos() {
             <?php
         }
     } else {
-        echo '<p class="no-more-posts">Plus de photos disponibles.</p>';
     }
 
     wp_reset_postdata();

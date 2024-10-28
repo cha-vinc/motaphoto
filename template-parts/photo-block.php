@@ -61,6 +61,7 @@
 
     <div class="view-all-button">
         <button id="load-more-posts">Charger plus</button>
+
     </div>
     
     
