@@ -38,19 +38,19 @@ get_header();
         <?php
         $photo_categories = get_terms('categorie');
         foreach ($photo_categories as $category) {
-            echo '<option value="' . $category->slug . '">' . $category->name . '</option>';
+            echo '<option value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</option>';
         }
         ?>
     </select>
     
-    <!-- Format -->
-    <label for="filtre-format"></label>
+        <!-- Format -->
+        <label for="filtre-format"></label>
     <select name="filtre-format" id="filtre-format">
         <option value="ALL">FORMAT</option>
         <?php
         $photo_formats = get_terms('format');
         foreach ($photo_formats as $format) {
-            echo '<option value="' . $format->slug . '">' . $format->name . '</option>';
+            echo '<option value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</option>';
         }
         ?>
     </select>
@@ -58,16 +58,16 @@ get_header();
     <!-- Trier par date -->
     <label for="tri-date"></label>
     <select name="tri-date" id="tri-date">
-        <option value="ALL">TRIER PAR</option>
         <option value="DESC">Du plus récent au plus ancien</option>
         <option value="ASC">Du plus ancien au plus récent</option>
     </select>
 </div>
 
 <!-- Bloc de photos / reprise du template part du fichier single-photo.php-->
-<div id="photo-container">
+<div id="photo-container" >
     <?php include get_template_directory() . '/template-parts/photo-block.php'; ?>
 </div>
+
 
 
 </main>

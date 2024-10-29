@@ -55,10 +55,13 @@
 
 /* Styles pour simuler le changement de couleur sur les options */
 .filtre-tri select option:hover {
-    background-color: #E00000;
+    background-color: #E00000 !important;
     color: white;
 }
 
+.filtre-all{
+    color: white;
+}
 
 
 
@@ -81,4 +84,6 @@
     border: 1.3px solid #B8BBC2;  
     justify-content: space-between;
 }
+
+
 
