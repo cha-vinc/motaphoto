@@ -20,12 +20,15 @@
         <div class="custom-post-thumbnail">
             <a href="<?php the_permalink(); ?>">
                 <?php if (has_post_thumbnail()) : ?>
-                    <div class="thumbnail-wrapper">
+                    <div class="thumbnail-wrapper" data-reference="<?php echo get_field('reference'); ?>">
                         <a href="<?php the_permalink(); ?>">
                             <?php the_post_thumbnail(); ?>
                             <!-- Section | Overlay Catalogue -->
-                            <div class="thumbnail-overlay ">
+                            <div class="thumbnail-overlay " >
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-eye.png" alt="Icône de l'œil"> <!-- Icône de l'œil | Informations sur la photo -->
+                                <div class="lightbox-icon" >
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-fullsreen.png" alt="Icône de lightbox"> 
+                                </div>
                                 <?php
                                 // Récupère la référence et la catégorie de l'image associée.
                                 $related_reference_photo = get_field('reference_photo');   // Récupère la référence de la photo
@@ -48,6 +51,7 @@
                                         <p><?php echo implode(', ', $related_category_names); ?></p>
                                     </div>
                                 </div>
+                               
                             </div>
                         </a>
                     </div>
