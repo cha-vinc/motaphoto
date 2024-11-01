@@ -1,31 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Sélection des flèches
+    // Sélection des flèches de navigation et du conteneur de miniature
     const prevArrow = document.getElementById('prev-arrow-link');
     const nextArrow = document.getElementById('next-arrow-link');
-    
-    // Sélection de l'emplacement où l'image de miniature sera affichée
     const thumbnailWrapper = document.querySelector('.thumbnail-wrapper');
 
-    // Fonction pour afficher la miniature
-    function showThumbnail(event, thumbnailUrl) {
+    // Récupère l'URL de la photo actuelle de la page
+    const currentPhotoUrl = document.querySelector('.right-container .photo img').src;
+
+    // Fonction pour afficher une miniature donnée
+    function showThumbnail(url) {
         const img = document.createElement('img');
-        img.src = thumbnailUrl;
+        img.src = url;
         img.classList.add('thumbnail-image'); // Classe pour styliser l'image
-        thumbnailWrapper.innerHTML = ''; // Réinitialiser le contenu du wrapper
+        thumbnailWrapper.innerHTML = ''; // Réinitialise le contenu du wrapper
         thumbnailWrapper.appendChild(img);
         thumbnailWrapper.style.opacity = '1';
     }
 
-    // Fonction pour masquer la miniature
-    function hideThumbnail() {
-        thumbnailWrapper.style.opacity = '0';
-        thumbnailWrapper.innerHTML = ''; // Retire l'image
-    }
+    // Affiche la photo actuelle par défaut
+    showThumbnail(currentPhotoUrl);
 
-    // Écouteurs pour les événements de survol
-    prevArrow.addEventListener('mouseover', (event) => showThumbnail(event, prevArrow.dataset.thumbnail));
-    prevArrow.addEventListener('mouseout', hideThumbnail);
+    // Événements de survol pour afficher les miniatures de la photo précédente ou suivante
+    prevArrow.addEventListener('mouseover', () => showThumbnail(prevArrow.dataset.thumbnail));
+    nextArrow.addEventListener('mouseover', () => showThumbnail(nextArrow.dataset.thumbnail));
 
-    nextArrow.addEventListener('mouseover', (event) => showThumbnail(event, nextArrow.dataset.thumbnail));
-    nextArrow.addEventListener('mouseout', hideThumbnail);
+    // Lorsque le survol des flèches cesse, réinitialise avec la photo actuelle
+    prevArrow.addEventListener('mouseout', () => showThumbnail(currentPhotoUrl));
+    nextArrow.addEventListener('mouseout', () => showThumbnail(currentPhotoUrl));
 });
