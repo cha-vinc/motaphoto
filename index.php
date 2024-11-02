@@ -32,35 +32,52 @@ get_header();
 <!-- Filtres du catalogue photo -->
 <div class="filtre-tri">
     <!-- Categorie -->
-    <label for="filtre-categorie"></label>
-    <select name="filtre-categorie" id="filtre-categorie">
-        <option value="ALL">CATÉGORIE</option>
-        <?php
-        $photo_categories = get_terms('categorie');
-        foreach ($photo_categories as $category) {
-            echo '<option value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</option>';
-        }
-        ?>
-    </select>
+    <ul class="filtre-categorie">
+        <li class="filtre-btn main-option" data-type="categorie" data-filter="ALL">
+            Catégories
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn">
+            <ul class="options">
+                <?php
+                $photo_categories = get_terms('categorie');
+                foreach ($photo_categories as $category) {
+                    echo '<li data-filter="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</li>';
+                }
+                ?>
+            </ul>
+        </li>
+    </ul>
     
-        <!-- Format -->
-        <label for="filtre-format"></label>
-    <select name="filtre-format" id="filtre-format">
-        <option value="ALL">FORMAT</option>
-        <?php
-        $photo_formats = get_terms('format');
-        foreach ($photo_formats as $format) {
-            echo '<option value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</option>';
-        }
-        ?>
-    </select>
+    <!-- Format -->
+    <ul class="filtre-format">
+        <li class="filtre-btn main-option" data-type="format" data-filter="ALL">
+            Formats
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn">
+            <ul class="options">
+                <?php
+                $photo_formats = get_terms('format');
+                foreach ($photo_formats as $format) {
+                    echo '<li data-filter="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</li>';
+                }
+                ?>
+            </ul>
+        </li>
+    </ul>
 
-    <!-- Trier par date -->
-    <label for="tri-date"></label>
-    <select name="tri-date" id="tri-date">
-        <option value="DESC">Du plus récent au plus ancien</option>
-        <option value="ASC">Du plus ancien au plus récent</option>
-    </select>
+
+<!-- Trier par date -->
+<label for="tri-date"></label>
+<ul class="tri-date" id="tri-date">
+    <li class="filtre-btn main-option" data-type="order" data-filter="ALL">
+        Trier par
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn" />
+        <!-- Menu déroulant des options -->
+        <ul class="options">
+            <li data-filter="DESC">Du plus récent au plus ancien</li>
+            <li data-filter="ASC">Du plus ancien au plus récent</li>
+        </ul>
+    </li>
+</ul>
+
 </div>
 
 <!-- Bloc de photos / reprise du template part du fichier single-photo.php-->

@@ -27,18 +27,22 @@
     height: auto;
 }
 
-
-/* Catégorie et filtre - Homepage */
-.filtre-tri {
+.filtre-tri{
     max-width: 1126px;  /* Largeur maximale - Section Filtres */
     margin: 0 auto;  
     text-align: center;  
+    /*padding-right: 25px; */ 
+    /*padding-left: 25px; */
     padding-top: 40px; 
     display: flex; 
-    justify-content: start;
+    justify-content: space-between;
 }
 
-.filtre-tri label, .filtre-tri select {
+.filtre-tri ul {
+    position: relative;
+}
+
+.filtre-tri label, .filtre-tri ul {
     font-family: 'Poppins';  
     font-size: 12px;  
     font-weight: 500;  
@@ -48,42 +52,81 @@
     text-transform: uppercase;  
 }
 
-.filtre-tri select {
+.filtre-tri li{
+    text-transform: none;
+}
+
+.filtre-tri .main-option {
+    cursor: pointer;
+    background-color: white;
+    color: BLACK;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+
+.filtre-tri .options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border:solid 1px white;
+    border-radius: 5px 5px 5px 5px;
+    width: 100%; /* Prend la même largeur que le parent */
+    z-index: 10;
+}
+
+.filtre-tri .options li {
+    padding: 10px;
+    cursor: pointer;
     background-color: white;
     color: black;
 }
 
-/* Styles pour simuler le changement de couleur sur les options */
-.filtre-tri select option:hover {
-    background-color: #E00000 !important;
-    color: white;
+li::marker{
+    content:none;
 }
 
-.filtre-all{
+.filtre-tri .options li:hover {
+    background-color: #E00000;
     color: white;
+    border-radius: 5px;
 }
 
+/* Afficher les options lorsque la classe 'active' est ajoutée */
+.filtre-tri .filtre-btn.active .options  {
+    display: block;
+    padding: 0;
+}
 
-
-#filtre-categorie{
+.filtre-categorie{
     margin-right: 42px;
 }
 
-#tri-date{
-    margin-left: 310px;
-}
-
-#filtre-categorie,
-#filtre-format,
-#tri-date{
-    width: 260px;  
-    height: 42px;  
-    padding: 11px 18px 11px 18px;  
-    margin-bottom: 20px; 
-    border-radius: 8px;  
-    border: 1.3px solid #B8BBC2;  
+.filtre-btn{
+    display: flex;
     justify-content: space-between;
 }
 
+img.icon-btn{
+    height: 6px;
+    padding-top: 6.5PX;
+}
 
+.tri-date{
+    margin-left: 310px;
+}
+
+.filtre-categorie,
+.filtre-format,
+.tri-date{
+    width: 260px;  /* Largeur Filtres */
+    height: 42px;  /* Hauteur Filtres */
+    padding: 11px 18px 11px 18px;  /* Marge intérieure Filtres */
+    margin-bottom: 20px; 
+    border-radius: 8px;  /* Coins Filtres */
+    border: 1.3px solid #B8BBC2;  /* Bordure solide */
+    justify-content: space-between;
+}
 

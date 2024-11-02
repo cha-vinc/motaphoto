@@ -70,6 +70,7 @@ function enqueue_infinite_pagination_js() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_infinite_pagination_js');
 
+
 // Fonction pour le bouchon "Charger plus" dans la page d'accueil
 function load_more_photos() {
     // Récupérer les paramètres de la requête AJAX
