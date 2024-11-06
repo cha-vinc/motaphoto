@@ -130,3 +130,17 @@ img.icon-btn{
     justify-content: space-between;
 }
 
+.options li.active-option {
+    background-color: #E00000; /* Couleur active */
+    color: white;
+}
+
+/* Styles | Mobile - Hero Image */
+@media screen and (max-width: 720px) {
+    .principal-head {
+        height: 400px; 
+        width: 100%;
+    }
+}
+
+

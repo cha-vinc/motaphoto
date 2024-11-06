@@ -164,23 +164,19 @@
 
 /* Styles | Bouton de fermeture de la modale photo */
 .close-photo {
-    font-family: "Space Mono", monospace;
+    font-family: 'Space Mono';
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
+    right: 1%;
+    font-size: 2em;
 }
 
-.close-photo:focus {
+.close-photo:focus,
+.close-photo:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-.close-photo:hover {
-    text-decoration: underline;
-}
 
 /* Styles | Conteneurs dans la partie de contact à droite */
 .right-contact > div {
@@ -283,7 +279,7 @@
     margin-top: 20px; 
 }
 
-/* Styles | Conteneurs des images liées individuelles */
+/* Styles | Conteneurs des images liées individuelles*/ 
 .related-image {
     flex: 1;
     margin-right: 10px;

@@ -27,6 +27,14 @@
                 <img class="logo-dimension" src="<?php echo $logo[0] ?>" alt="Logo">
             </a>
         </div>
+
+        <!-- Bouton | Menu Mobile -->
+        <div class="mobile-menu-button" id="open-menu-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <nav class="header-menu">  
                
         <?php

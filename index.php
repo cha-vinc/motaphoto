@@ -31,10 +31,10 @@ get_header();
 
 <!-- Filtres du catalogue photo -->
 <div class="filtre-tri">
-    <!-- Categorie -->
+    <!-- Catégories -->
     <ul class="filtre-categorie">
-        <li class="filtre-btn main-option" data-type="categorie" data-filter="ALL">
-            Catégories
+        <li class="filtre-btn " data-type="categorie" data-filter="ALL">
+            <span class="main-option">Catégories</span>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn">
             <ul class="options">
                 <?php
@@ -47,10 +47,10 @@ get_header();
         </li>
     </ul>
     
-    <!-- Format -->
+    <!-- Formats -->
     <ul class="filtre-format">
-        <li class="filtre-btn main-option" data-type="format" data-filter="ALL">
-            Formats
+        <li class="filtre-btn" data-type="format" data-filter="ALL">
+            <span class="main-option">Formats</span>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn">
             <ul class="options">
                 <?php
@@ -63,22 +63,19 @@ get_header();
         </li>
     </ul>
 
-
-<!-- Trier par date -->
-<label for="tri-date"></label>
-<ul class="tri-date" id="tri-date">
-    <li class="filtre-btn main-option" data-type="order" data-filter="ALL">
-        Trier par
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn" />
-        <!-- Menu déroulant des options -->
-        <ul class="options">
-            <li data-filter="DESC">Du plus récent au plus ancien</li>
-            <li data-filter="ASC">Du plus ancien au plus récent</li>
-        </ul>
-    </li>
-</ul>
-
+    <!-- Trier par date -->
+    <ul class="tri-date">
+        <li class="filtre-btn " data-type="order" data-filter="ALL">
+            <span class="main-option">Trier par</span>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn" />
+            <ul class="options">
+                <li data-filter="DESC">Du plus récent au plus ancien</li>
+                <li data-filter="ASC">Du plus ancien au plus récent</li>
+            </ul>
+        </li>
+    </ul>
 </div>
+
 
 <!-- Bloc de photos / reprise du template part du fichier single-photo.php-->
 <div id="photo-container" >

@@ -40,6 +40,7 @@
 
 .btn-close {
   position: absolute;
+  font-family: 'Space Mono';
   top: 10%;/* 20 PX*/
   right: 3%; /* 20PX*/
 }

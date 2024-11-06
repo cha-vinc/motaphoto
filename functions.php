@@ -31,11 +31,11 @@ function motaphoto_enqueue_assets() {
     wp_enqueue_script('single-photo-thumbnail', get_template_directory_uri() . '/js/single-photo-thumbnail.js', array('jquery'), '1.1.1', true);
     wp_enqueue_script('lightbox', get_template_directory_uri() . '/js/lightbox.js', array('jquery'), '1.1.1', true);
     wp_enqueue_script('index-filtre', get_template_directory_uri() . '/js/index-filtre.js', array('jquery'), '1.1.1', true);
+    wp_localize_script('index-filtre', 'ajaxurl', admin_url('admin-ajax.php'));
     wp_enqueue_script('load-more', get_template_directory_uri() . '/js/photo-block-load-more.js', array('jquery'), '1.1.1', true);
     wp_localize_script('load-more', 'ajaxurl', admin_url('admin-ajax.php'));
     wp_enqueue_script('infinite-pagination', get_template_directory_uri() . '/js/infinite-pagination.js', array('jquery'), '1.1.1', true);
-    wp_enqueue_script('index-filtre', get_template_directory_uri() . '/js/index-filtre.js', array('jquery'), '1.1.1', true);
-    wp_localize_script('index-filtre', 'ajaxurl', admin_url('admin-ajax.php'));
+    
     
 }
 add_action('wp_enqueue_scripts', 'motaphoto_enqueue_assets', 99);
@@ -71,27 +71,24 @@ function enqueue_infinite_pagination_js() {
 add_action('wp_enqueue_scripts', 'enqueue_infinite_pagination_js');
 
 
-// Fonction pour le bouchon "Charger plus" dans la page d'accueil
 function load_more_photos() {
-    // Récupérer les paramètres de la requête AJAX
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
     $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
     $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'DESC';
 
-    // Arguments pour récupérer les photos
     $args_custom_posts = array(
         'post_type' => 'photo',
-        'posts_per_page' => 4, 
+        'posts_per_page' => 4,
         'paged' => $page,
-        'orderby' => 'date',
+        'orderby' => 'rand',  /*rand : aléatoire */
         'order' => $order,
         'tax_query' => array(
             'relation' => 'AND',
         ),
     );
 
-    // Ajout du filtre catégorie si présent
+    // Filtre par catégorie
     if ($category && $category !== 'ALL') {
         $args_custom_posts['tax_query'][] = array(
             'taxonomy' => 'categorie',
@@ -100,7 +97,7 @@ function load_more_photos() {
         );
     }
 
-    // Ajout du filtre format si présent
+    // Filtre par format
     if ($format && $format !== 'ALL') {
         $args_custom_posts['tax_query'][] = array(
             'taxonomy' => 'format',
@@ -111,7 +108,6 @@ function load_more_photos() {
 
     $custom_posts_query = new WP_Query($args_custom_posts);
 
-    // Boucle pour afficher les photos
     if ($custom_posts_query->have_posts()) {
         while ($custom_posts_query->have_posts()) {
             $custom_posts_query->the_post();
@@ -124,29 +120,7 @@ function load_more_photos() {
                 }
             }
             ?>
-            <div class="custom-post-thumbnail">
-                <a href="<?php the_permalink(); ?>">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <div class="thumbnail-wrapper">
-                            <?php the_post_thumbnail(); ?>
-                            <div class="thumbnail-overlay">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-eye.png" alt="Icône de l'œil">
-                                <div class="lightbox-icon">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-fullsreen.png" alt="Icône de lightbox"> 
-                                </div>
-                                <div class="photo-info">
-                                    <div class="photo-info-left">
-                                        <p><?php the_title(); ?></p>
-                                    </div>
-                                    <div class="photo-info-right">
-                                        <p><?php echo implode(', ', $related_category_names); ?></p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </a>
+                <?php include get_template_directory() . '/template-parts/custom-photo-block.php'; ?>
             </div>
             <?php
         }
@@ -160,3 +134,62 @@ function load_more_photos() {
 
 add_action('wp_ajax_load_more_photos', 'load_more_photos');
 add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
+
+function my_ajax_filter_search() {
+    $category = sanitize_text_field($_POST['category']);
+    $format = sanitize_text_field($_POST['format']);
+    $order = sanitize_text_field($_POST['order']);
+    $offset = absint($_POST['offset']);
+
+    $args = array(
+        'post_type' => 'photo',
+        'posts_per_page' => 8,
+        'offset' => $offset,
+        'order' => $order === 'ASC' ? 'ASC' : 'DESC',
+        'tax_query' => array(
+            'relation' => 'AND',
+        ),
+    );
+    
+    if ($category && $category !== 'ALL') {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'categorie',
+            'field' => 'slug',
+            'terms' => $category,
+        );
+    }
+    
+    if ($format && $format !== 'ALL') {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'format',
+            'field' => 'slug',
+            'terms' => $format,
+        );
+    }
+    
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        ob_start();
+        while ($query->have_posts()) {
+            $query->the_post();
+            ?>
+            <div class="custom-post-thumbnail">
+                <a href="<?php the_permalink(); ?>">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                    <p><?php the_title(); ?></p>
+                </a>
+            </div>
+            <?php
+        }
+        $content = ob_get_clean();
+        wp_send_json_success($content);
+    } else {
+        wp_send_json_error('Aucune photo trouvée.');
+    }
+
+    wp_die();
+}
+add_action('wp_ajax_my_ajax_filter_search', 'my_ajax_filter_search');
+add_action('wp_ajax_nopriv_my_ajax_filter_search', 'my_ajax_filter_search');
