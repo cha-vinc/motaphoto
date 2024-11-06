@@ -30,7 +30,8 @@ jQuery(document).ready(function($) {
         }
     }
 
-    $('.thumbnail-wrapper .lightbox-icon').click(function(e) {
+    // Utilisez `on` pour attacher l'événement click sur des éléments chargés dynamiquement
+    $(document).on('click', '.thumbnail-wrapper .lightbox-icon', function(e) {
         e.preventDefault();
         loadImages();
         const imageSrc = $(this).closest('.thumbnail-wrapper').find('img').attr('src');
