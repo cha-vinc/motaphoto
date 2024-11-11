@@ -25,7 +25,7 @@
     </div>
 
     <div class="view-all-button">
-        <button id="load-more-posts">Charger plus</button>
+        <button id="load-more-posts" class="load-more-button">Charger plus</button>
 
     </div>
     

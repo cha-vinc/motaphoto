@@ -17,6 +17,16 @@ function register_footer_menu() {
 }
 add_action( 'after_setup_theme', 'register_footer_menu' );
 
+function add_accueil_to_menu($items, $args) {
+    // Vérifier que l'on est sur le bon menu
+    if ($args->theme_location == 'main-menu') {
+        $items .= '<li><a href="#accueil">Accueil</a></li>';
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'add_accueil_to_menu', 10, 2);
+
+
 function motaphoto_enqueue_assets() {
     // Styles
     wp_enqueue_style('theme-css', get_template_directory_uri() . '/css/theme.css', array(), '1.0');
@@ -175,13 +185,10 @@ function my_ajax_filter_search() {
         while ($query->have_posts()) {
             $query->the_post();
             ?>
-            <div class="custom-post-thumbnail">
-                <a href="<?php the_permalink(); ?>">
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-                    <p><?php the_title(); ?></p>
-                </a>
+                <?php include get_template_directory() . '/template-parts/custom-photo-block.php'; ?>
             </div>
             <?php
+            
         }
         $content = ob_get_clean();
         wp_send_json_success($content);

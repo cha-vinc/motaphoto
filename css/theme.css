@@ -86,6 +86,12 @@ header {
     font-weight: 700;
 }
 
+ul#menu-main-menu,
+ul#menu-footer{
+    text-transform: uppercase;
+}
+
+
 /* Styles | PIED DE PAGE */
 .footer-menu{
     text-align: center;

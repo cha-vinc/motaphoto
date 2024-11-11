@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".filtre-tri .filtre-btn");
+    const loadMoreButton = document.querySelector(".load-more-button");
     let selectedCategory = '';
     let selectedFormat = '';
-    let selectedOrder = "DESC"; // Par défaut
+    let selectedOrder = "DESC";
+    let currentPage = 1;
 
     filterButtons.forEach(button => {
         button.addEventListener("click", function (event) {
@@ -13,25 +15,31 @@ document.addEventListener("DOMContentLoaded", function () {
         button.querySelectorAll(".options li").forEach(option => {
             option.addEventListener("click", function () {
                 const filterType = button.parentElement.classList[0];
-            
                 const value = this.getAttribute("data-filter");
 
                 // Mettre à jour la sélection
                 if (filterType === "filtre-categorie") {
                     selectedCategory = value;
-                    button.textContent = this.textContent;
+                    button.querySelector(".main-option").textContent = this.textContent;
                 } else if (filterType === "filtre-format") {
                     selectedFormat = value;
-                    button.textContent = this.textContent;
+                    button.querySelector(".main-option").textContent = this.textContent;
                 } else if (filterType === "tri-date") {
                     selectedOrder = value;
-                    button.textContent = this.textContent;
+                    button.querySelector(".main-option").textContent = this.textContent;
                 }
 
-                // Charger les photos filtrées
+                // Réinitialiser la page et charger les photos filtrées
+                currentPage = 1;
                 loadPhotosWithFilters();
             });
         });
+    });
+
+    // Gestion du clic sur le bouton "load more"
+    loadMoreButton.addEventListener("click", function () {
+        currentPage++;
+        loadPhotosWithFilters(currentPage);
     });
 
     function loadPhotosWithFilters(page = 1) {
@@ -42,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
             order: selectedOrder,
             offset: (page - 1) * 8
         };
-    
-        console.log("Données envoyées à AJAX :", data); // Ajoutez cette ligne pour déboguer
-    
+
+        console.log("Données envoyées à AJAX :", data);
+
         jQuery.post(ajaxurl, data, function (response) {
             if (response.success) {
                 if (page === 1) {
@@ -53,8 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     jQuery(".thumbnail-container-accueil").append(response.data);
                 }
             } else {
-                jQuery(".thumbnail-container-accueil").html('<p>Aucune photo trouvée.</p>');
+                if (page === 1) {
+                    jQuery(".thumbnail-container-accueil").html('<p>Aucune photo trouvée pour les filtres sélectionnés.</p>');
+                }
             }
         });
     }
-});    
+
+    // Chargement initial des photos
+    loadPhotosWithFilters();
+});

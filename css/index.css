@@ -56,6 +56,7 @@
     text-transform: none;
 }
 
+
 .filtre-tri .main-option {
     cursor: pointer;
     background-color: white;
@@ -133,6 +134,15 @@ img.icon-btn{
 .options li.active-option {
     background-color: #E00000; /* Couleur active */
     color: white;
+}
+
+li.all-filter {
+    color:white !important;
+}
+
+
+li.all-filter:hover {
+    color: #E00000 !important;
 }
 
 /* Styles | Mobile - Hero Image */

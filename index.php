@@ -37,6 +37,7 @@ get_header();
             <span class="main-option">Catégories</span>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn">
             <ul class="options">
+                <li class="all-filter" data-filter="ALL">Catégories</li>
                 <?php
                 $photo_categories = get_terms('categorie');
                 foreach ($photo_categories as $category) {
@@ -53,6 +54,7 @@ get_header();
             <span class="main-option">Formats</span>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn">
             <ul class="options">
+                <li class="all-filter" data-filter="ALL">Formats</li>
                 <?php
                 $photo_formats = get_terms('format');
                 foreach ($photo_formats as $format) {
@@ -69,6 +71,7 @@ get_header();
             <span class="main-option">Trier par</span>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-filtre.png" alt="icon" class="icon-btn" />
             <ul class="options">
+                <li class="all-filter" data-filter="ALL">Trier par</li>
                 <li data-filter="DESC">Du plus récent au plus ancien</li>
                 <li data-filter="ASC">Du plus ancien au plus récent</li>
             </ul>
