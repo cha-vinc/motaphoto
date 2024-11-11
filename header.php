@@ -36,13 +36,12 @@
         </div>
 
         <nav class="header-menu">  
-               
+        <li class="accueil-menu"><a href="<?php echo home_url(); ?>">Accueil</a></li>
         <?php
         // Affiche le menu du header
             wp_nav_menu([
                 'theme_location' => 'main-menu',
                 'container'      => false,
-                'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s<li><a href="#accueil">Accueil</a></li></ul>',
 
             ]);?>
             <!--   Affiche le modal de contact-->

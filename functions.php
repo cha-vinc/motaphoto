@@ -17,14 +17,6 @@ function register_footer_menu() {
 }
 add_action( 'after_setup_theme', 'register_footer_menu' );
 
-function add_accueil_to_menu($items, $args) {
-    // Vérifier que l'on est sur le bon menu
-    if ($args->theme_location == 'main-menu') {
-        $items .= '<li><a href="#accueil">Accueil</a></li>';
-    }
-    return $items;
-}
-add_filter('wp_nav_menu_items', 'add_accueil_to_menu', 10, 2);
 
 
 function motaphoto_enqueue_assets() {

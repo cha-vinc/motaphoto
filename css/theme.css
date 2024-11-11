@@ -39,6 +39,7 @@ header {
 
 /* Styles | Liens du Menu de l'En-Tête et du Pied de Page */
 .header-menu li a,
+.accueil-menu li a,
 .footer-menu li a,
 #contact-button-header,
 .text-footer{
@@ -64,6 +65,7 @@ header {
 /* Styles | Éléments de Liste du Menu de l'En-Tête et du Pied de Page */
 
 .header-menu li,
+.accueil-menu li,
 .footer-menu li{
     margin-right: 20px;
 }
@@ -79,6 +81,7 @@ header {
 /* Styles | Styles de Survole pour Boutons et Liens */
 #contact-button-header:hover,
 .header-menu li a:hover,
+.accueil-menu li a:hover,
 .footer-menu li a:hover,
 .text-footer:hover {
     font-family: "Space Mono";
@@ -87,7 +90,8 @@ header {
 }
 
 ul#menu-main-menu,
-ul#menu-footer{
+ul#menu-footer,
+.accueil-menu{
     text-transform: uppercase;
 }
 
