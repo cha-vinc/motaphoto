@@ -10,7 +10,7 @@
 /* Styles | Container CPT Thumbnails */
 .thumbnail-container-accueil {
     display: flex;  
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
     justify-content: space-between;  
     margin-top: 20px;  
 }
@@ -127,5 +127,14 @@
     padding-right: 25px;
 }
 
+
+@media screen and (max-width: 768px) {
+
+    .thumbnail-container-accueil{
+        flex-direction: column !important;
+        flex-wrap: nowrap;
+        margin: 25px;
+    }
+}
 
 

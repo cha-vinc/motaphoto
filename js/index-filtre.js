@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("Données envoyées à AJAX :", data);
 
-        jQuery.post(ajaxurl, data, function (response) {
+        jQuery.post(ajaxData.ajaxurl, data, function (response) {
             if (response.success) {
                 if (page === 1) {
                     jQuery(".thumbnail-container-accueil").html(response.data);
@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         });
+        
     }
 
     // Chargement initial des photos

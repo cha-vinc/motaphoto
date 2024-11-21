@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.includes('no-more-posts')) {
                 document.getElementById('load-more-posts').style.display = 'none';
             }
+            
         })
         .catch(error => console.error('Erreur : ', error));
     });

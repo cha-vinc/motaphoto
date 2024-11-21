@@ -361,3 +361,92 @@
     right: 10px;
     color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+
+    
+    .contenu-principal{
+        height: calc(100vh + 200px);
+    }
+
+    .modal-content-photo {
+        max-width: 95%;
+    }
+    .left-contact {
+        display: flex;
+        align-items: flex-start;
+        text-align: center;
+        flex-direction: column;
+        max-width: 65%;
+    }
+
+    .left-contenu{
+        margin:50px;
+    }
+
+    #myBtn-photo{
+        width: 65vw;
+    }
+
+    .zone-contact{
+        justify-content: space-around;
+    }
+   
+   
+
+
+    .left-container, 
+    .zone-contact{
+        padding-top: 30PX;
+        padding-bottom: 50PX;
+
+    }
+
+    .zone-contenu,
+    .zone-contact,
+    .left-container,
+    .right-container {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+   
+
+    .left-container h1 {
+        font-size: 44px;
+    }
+
+    .zone-contenu.mobile-first {
+        flex-direction: column-reverse;
+    }
+    
+ 
+
+    .right-contact{
+      display: none;
+    }
+
+    .image-container {
+        display: block;
+    }
+
+    /* Ajuster la largeur et l'espacement des images associées individuelles */
+    .related-image {
+        flex: 1; /* Pleine largeur - une seule colonne */
+        margin-right: 0; /* Supprimer la marge droite pour l'espacement */
+        margin-bottom: 10px; /* Ajouter une marge inférieure pour l'espacement */
+    }
+
+    .related-images h3{
+        text-align: center;
+
+    }
+
+
+
+    
+
+
+
+}
+

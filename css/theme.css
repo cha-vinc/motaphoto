@@ -1,6 +1,7 @@
 /* Styles | Global */
 body {
     background-color: #FFFFFF;
+    margin: 0;
 }
 
 main {
@@ -130,15 +131,94 @@ footer {
     text-align: center; 
 }
 
+/* Styles | MOBILE - BOUTON BURGER */
+.mobile-menu-button {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    display: block;
+    width: 27.42px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: #000;
+    transition: 0.4s;
+}
+
+.close-button {
+    display: none;
+}
+
+
+.mobile-menu-opened .close-button {
+    display: block;
+}
+
+.mobile-menu-opened .mobile-menu-button {
+    display: none;
+}
 
 
 /* MODÈLE - ARTICLE */
-
-
 
 .main-content-post {
     margin: 0 auto;
     max-width: 800px;
 }
+
+/* Styles | MOBILE - MENU */
+@media screen and (max-width: 768px) {
+
+
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+    }
+    
+    .header-logo img {
+        max-width: 200px;
+        padding-left: 0;
+    }
+    
+    .mobile-menu-button {
+        display: block;
+    }
+    
+    .header-menu {
+        display: none; /* Sauf quand le menu est ouvert */
+    }
+    
+    .mobile-menu-opened .header-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul#menu-footer{
+        display: flex;
+        flex-direction: column ;
+    }
+
+    li#menu-item-40,
+    li#menu-item-41{
+        margin-top: 30px;
+    }
+
+    li#menu-item-41{
+        margin-bottom: 30px;
+    }
+
+    .footer-menu{
+        flex-direction: column;
+        margin-bottom: 35px;
+    }
+}
+    
 
 
