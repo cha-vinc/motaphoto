@@ -27,11 +27,20 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <button id="close-menu-button" class="close-button">X</button>
 
 
 
         <nav class="header-menu">  
+        <div class="mobile-header">
+            <div class="mobile-logo">
+                <a href="<?php echo home_url(); ?>">
+                    <img src="<?php echo $logo[0]; ?>" alt="Logo" />
+                </a>
+            </div>
+            <button id="close-menu-button-mobile" class="close-button">X</button>
+        </div>
+
+        <ul>
         <li class="accueil-menu"><a href="<?php echo home_url(); ?>">Accueil</a></li>
         <?php
         // Affiche le menu du header
@@ -42,7 +51,7 @@
             ]);?>
             <!--   Affiche le modal de contact-->
             <?php include get_template_directory() . '/template-parts/modale-contact.php'; ?>
-
+        </ul>
         </nav>
 
         </header>

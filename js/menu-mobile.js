@@ -1,5 +1,5 @@
 const openMenuButton = document.getElementById('open-menu-button');
-const closeMenuButton = document.getElementById('close-menu-button');
+const closeMenuButton = document.getElementById('close-menu-button-mobile');
 const body = document.body;
 
 openMenuButton.addEventListener('click', () => {
