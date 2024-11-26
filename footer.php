@@ -28,7 +28,7 @@
             'theme_location' => 'footer-menu', //Affiche le menu pied de page
         ]);
         ?>
-        <p class="text-footer">TOUS DROITS RÉSERVÉS</p>
+        <p class="text-footer">Tous droits réservés</p>
     </nav>
 </footer>
 

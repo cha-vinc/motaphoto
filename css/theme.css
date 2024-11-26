@@ -1,10 +1,15 @@
 /* Styles | Global */
-body {
+html, body {
     background-color: #FFFFFF;
+    height: 100%; /* Étend la hauteur de la page à 100% de la fenêtre */
     margin: 0;
+    display: flex;
+    flex-direction: column;   
 }
 
+
 main {
+    flex:1;
     padding: 57px 0 20px 0;
     font-family: 'Space Mono';
 }
@@ -92,7 +97,8 @@ header {
 
 ul#menu-main-menu,
 ul#menu-footer,
-.accueil-menu{
+.accueil-menu,
+.text-footer{
     text-transform: uppercase;
 }
 
@@ -125,10 +131,10 @@ ul#menu-footer,
 /* Styles | Pied-de-page */
 
 footer {
+    background-color: #fff;
+    text-align: center;
     width: 100%;
-    bottom: 0;
-    background-color: #fff; 
-    text-align: center; 
+    padding: 10px 0;
 }
 
 /* Styles | MOBILE - BOUTON BURGER */

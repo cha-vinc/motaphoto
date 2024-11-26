@@ -93,6 +93,8 @@
     object-fit: contain;
 }
 
+
+
 /*Modal de contact dans Single-photo*/
 
 /* Styles | Bouton myBtn-photo */
@@ -402,6 +404,8 @@
 
     }
 
+
+
     .zone-contenu,
     .zone-contact,
     .left-container,
@@ -418,8 +422,22 @@
 
     .zone-contenu.mobile-first {
         flex-direction: column-reverse;
+
+    }
+
+    .right-container{
+        padding-top: 50px;
+    }
+
+    /*.right-container,
+    .photo{
+        max-height: 70vh;
     }
     
+
+    .photo img {
+        height: calc(100vh + 64px);
+    }*/
  
 
     .right-contact{

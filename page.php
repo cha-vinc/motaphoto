@@ -1,26 +1,21 @@
-<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
+<?php
+get_header(); // Inclut le fichier header.php
+?>
 
-<!-- wp:group {"tagName":"main"} -->
-<main class="wp-block-group">
-	<!-- wp:group {"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group">
-		<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
-		<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
-		<!-- /wp:spacer -->
-
-		<!-- wp:post-title {"textAlign":"center","level":1} /-->
-
-		<!-- wp:spacer {"height":"var:preset|spacing|30","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}}} -->
-		<div style="margin-top:0;margin-bottom:0;height:var(--wp--preset--spacing--30)" aria-hidden="true"
-			class="wp-block-spacer"></div>
-		<!-- /wp:spacer -->
-
-		<!-- wp:post-featured-image {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} /-->
-	</div>
-	<!-- /wp:group -->
-
-	<!-- wp:post-content {"lock":{"move":false,"remove":true},"layout":{"type":"constrained"}} /-->
+<main>
+    <?php
+    // Boucle WordPress pour afficher le contenu de la page
+    if (have_posts()) :
+        while (have_posts()) :
+            the_post();
+            the_content(); // Affiche le contenu de la page
+        endwhile;
+    else :
+        echo '<p>Aucun contenu trouvé</p>';
+    endif;
+    ?>
 </main>
-<!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->
+<?php
+get_footer(); // Inclut le fichier footer.php
+?>
