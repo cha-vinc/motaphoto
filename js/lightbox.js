@@ -57,3 +57,5 @@ jQuery(document).ready(function($) {
         openLightbox(currentIndex);
     });
 });
+
+

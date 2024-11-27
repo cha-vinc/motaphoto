@@ -56,7 +56,7 @@ get_header(); ?>
 
                 // Type de la photo
                 // Récupère la valeur du champ personnalisé 'type_de_photo' et l'affiche s'il existe.
-                $type_de_photo = get_field('type_de_photo');
+                $type_de_photo = get_field('type');
                 if ($type_de_photo) {
                     echo '<p>Type : ' . esc_html($type_de_photo) . '</p>';
                 }
