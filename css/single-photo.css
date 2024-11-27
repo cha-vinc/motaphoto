@@ -105,7 +105,6 @@
     width: 232px;
     height: 50px;
     border-radius: 2px;
-    transition: .3s ease-in-out;
     cursor: pointer;
     font-family: Space Mono;
     font-size: 12px;
@@ -142,17 +141,12 @@
     top: 50%;
     left: 50%;
     border: 5px solid #000000;
-    transform: translate(-50%, -50%);
     width: 70%; /* Réduire la largeur */
     max-width: 600px; /* Limite la largeur maximale */
     height: auto;
     max-height: 600PX; /* Limite la hauteur à 80% de la hauteur de l'écran */
     background-color: #fff;
-    -webkit-animation-name: 'animatetop';
-    -webkit-animation-duration: 0.8s;
-    animation-name: 'animatetop';
-    animation-duration: 0.8s;
-    animation-timing-function: ease;
+    
 }
 
 .modal-content-photo img{

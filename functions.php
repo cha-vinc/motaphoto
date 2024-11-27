@@ -76,6 +76,8 @@ function enqueue_infinite_pagination_js() {
 add_action('wp_enqueue_scripts', 'enqueue_infinite_pagination_js');
 
 
+
+
 function load_more_photos() {
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';

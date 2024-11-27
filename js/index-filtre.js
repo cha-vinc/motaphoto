@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
             button.classList.toggle("active");
             event.stopPropagation();
         });
-
+    
         button.querySelectorAll(".options li").forEach(option => {
             option.addEventListener("click", function () {
                 const filterType = button.parentElement.classList[0];
                 const value = this.getAttribute("data-filter");
-
+    
                 // Mettre à jour la sélection
                 if (filterType === "filtre-categorie") {
                     selectedCategory = value;
@@ -28,19 +28,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     selectedOrder = value;
                     button.querySelector(".main-option").textContent = this.textContent;
                 }
-
+    
+                // Fermez le menu après la sélection
+                button.classList.remove("active");
+    
                 // Réinitialiser la page et charger les photos filtrées
                 currentPage = 1;
                 loadPhotosWithFilters();
             });
         });
     });
+    
 
     // Gestion du clic sur le bouton "load more"
     loadMoreButton.addEventListener("click", function () {
         currentPage++;
         loadPhotosWithFilters(currentPage);
     });
+
+    
 
     function loadPhotosWithFilters(page = 1) {
         const data = {
@@ -71,4 +77,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Chargement initial des photos
     loadPhotosWithFilters();
+});
+
+// Ajout de l'écouteur d'événements sur les options du filtre
+document.querySelectorAll('.filtre-tri .options li').forEach(option => {
+    option.addEventListener('click', () => {
+        // Supprime la classe "selected" de toutes les options
+        document.querySelectorAll('.filtre-tri .options li').forEach(item => {
+            item.classList.remove('selected');
+        });
+
+        // Ajoute la classe "selected" à l'option cliquée
+        option.classList.add('selected');
+    });
 });
