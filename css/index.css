@@ -27,8 +27,10 @@
     height: auto;
 }
 
+/*Style : Filtres*/
+
 .filtre-tri{
-    max-width: 1126px;  /* Largeur maximale - Section Filtres */
+    max-width: 1126px;  
     margin: 0 auto;  
     text-align: center;  
     padding-top: 40px; 
@@ -73,7 +75,7 @@
     background-color: white;
     border:solid 1px white;
     border-radius: 5px 5px 5px 5px;
-    width: 100%; /* Prend la même largeur que le parent */
+    width: 100%;
     z-index: 10;
     
 }
@@ -90,23 +92,25 @@
     color: black;
 }
 
-
-
+/*Enlève le point du li*/
 li::marker{
     content:none;
 }
 
+/*Style filtres au survol*/
 .filtre-tri .options li:hover {
     background-color:#FFD6D6;
     color:#313144;    
     border-radius: 5px;
 }
 
+/*Style filtres au clic*/
 .filtre-tri .options li:active {
     background-color:#FE5858;   
     color:#313144;
 }
 
+/*Style filtres séléctionné*/
 .filtre-tri .options li.selected {
     background-color: #E00000 !important;
     color: white;
@@ -118,6 +122,8 @@ li::marker{
     padding: 0;
 }
 
+
+/* Style filtre catégorie, format et trier par */
 .filtre-categorie{
     margin-right: 42px;
 }
@@ -139,19 +145,16 @@ img.icon-btn{
 .filtre-categorie,
 .filtre-format,
 .tri-date{
-    width: 260px;  /* Largeur Filtres */
-    height: 42px;  /* Hauteur Filtres */
-    padding: 11px 18px 11px 18px;  /* Marge intérieure Filtres */
+    width: 260px;  
+    height: 42px;
+    padding: 11px 18px 11px 18px;  
     margin-bottom: 20px; 
-    border-radius: 8px;  /* Coins Filtres */
-    border: 1.3px solid #B8BBC2;  /* Bordure solide */
+    border-radius: 8px;  
+    border: 1.3px solid #B8BBC2;  
     justify-content: space-between;
 }
 
-.options li.active-option {
-    background-color: #E00000; /* Couleur active */
-    color: white;
-}
+
 
 li.all-filter {
     color:white !important;
@@ -162,6 +165,8 @@ li.all-filter:hover {
     color: white !important;
     background-color: white !important;
 }
+
+/*Animation filtres*/
 
 @keyframes slideDown {
     0% {
@@ -183,6 +188,7 @@ li.all-filter:hover {
 
 
 
+/*Format mobile*/
 @media screen and (max-width: 768px) {
 
     .principal-head{
