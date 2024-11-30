@@ -1,3 +1,6 @@
+/* Fichier JS pour le thumbnail dans single-photo.php et la navigation */
+
+
 document.addEventListener("DOMContentLoaded", function() {
     // Sélection des flèches de navigation et du conteneur de miniature
     const prevArrow = document.getElementById('prev-arrow-link');

@@ -1,6 +1,10 @@
+<!-- Fichier PHP pour la page d'accueil du site -->
+
+<!-- Insertion du header | Inclut le fichier header.php-->
 <?php
 get_header();
 ?>
+
 <main>
     <!-- Image d'en-tête  -->
 <div class="principal-head">
@@ -89,6 +93,7 @@ get_header();
 
 </main>
 
+<!-- Insertion du footer | Inclut le fichier footer.php-->
 
 <?php get_footer(); 
 ?>

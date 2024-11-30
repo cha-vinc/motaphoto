@@ -1,3 +1,6 @@
+<!-- Fichier PHP pour le header du site -->
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

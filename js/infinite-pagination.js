@@ -1,3 +1,6 @@
+/* Fichier JS pour la pagination infinie */
+
+
 jQuery(document).ready(function ($) {
     let currentPage = 1;
 

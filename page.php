@@ -1,5 +1,9 @@
+<!-- Fichier PHP que chaque page créer via Wordpress soit généré 
+avec le header et le footer -->
+
+<!-- Insertion du header | Inclut le fichier header.php-->
 <?php
-get_header(); // Inclut le fichier header.php
+get_header(); 
 ?>
 
 <main>
@@ -16,6 +20,7 @@ get_header(); // Inclut le fichier header.php
     ?>
 </main>
 
+<!-- Insertion du footer | Inclut le fichier footer.php-->
 <?php
-get_footer(); // Inclut le fichier footer.php
+get_footer(); 
 ?>

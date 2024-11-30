@@ -1,3 +1,7 @@
+/* Fichier CSS pour le style de la lightbox */
+
+
+/*Style lightbox*/
 .lightbox-container {
   display: none;
   position: fixed;
@@ -10,10 +14,12 @@
   align-items: center;
 }
 
+/*Quand la lightbox est ouverte*/
 .lightbox-container.opened {
   display: flex;
 }
 
+/*Comprends l'intégralité de la lightbox à l'écran*/
 .lightbox-wrapper{
   display: flex;
   justify-content: space-between; 
@@ -24,14 +30,13 @@
   margin-left: 18px;
 }
 
-
-
+/*Image de la lightbox*/
 .lightbox-img{
   display: flex;
   height: 70vh;
 }
 
-
+/*Navigation et bouton de la lightbox*/
 .btn-close, .left-arrow, .right-arrow {
   cursor: pointer;
   color: white;
@@ -53,7 +58,7 @@
   justify-content: flex-end;
 }
 
-
+/*Référence et titre de la photo dans la lightbox*/
 .info-photo {
   display: flex;
   justify-content: space-between;
@@ -62,5 +67,5 @@
   color: white;
   font-family: 'Poppins';
   font-size: 14px;
-  text-transform: uppercase;
+  text-transform: uppercase; /*Ecriture en majuscule*/
 }

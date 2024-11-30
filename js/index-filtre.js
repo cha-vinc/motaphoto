@@ -1,3 +1,6 @@
+/* Fichier JS pour les filtres dans la page d'accueil */
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".filtre-tri .filtre-btn");
     const loadMoreButton = document.querySelector(".load-more-button");
@@ -9,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     filterButtons.forEach(button => {
         button.addEventListener("click", function (event) {
             button.classList.toggle("active");
+            // Récupérer l'élément img.icon-btn associé
+            const icon = button.querySelector(".icon-btn");
+            if (icon) {
+                icon.classList.toggle("rotated");
+            }
             event.stopPropagation();
         });
     

@@ -1,3 +1,6 @@
+/* Fichier JS pour le menu format mobile */
+
+
 const openMenuButton = document.getElementById('open-menu-button');
 const closeMenuButton = document.getElementById('close-menu-button-mobile');
 const mobileMenu = document.querySelector('nav');

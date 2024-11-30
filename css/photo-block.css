@@ -1,4 +1,6 @@
-/* PHOTO BLOCK - BOUTON CHARGER PLUS - FILTRES */
+/* Fichier CSS pour le style des block photo et bouton "Charger plus" */
+
+
 /* Styles | Section CPT Thumbnails */
 .custom-post-thumbnails {
     max-width: 1126px;  
@@ -125,6 +127,8 @@
     justify-content: flex-end !important ;
     padding-right: 25px;
 }
+
+
 
 
 @media screen and (max-width: 768px) {

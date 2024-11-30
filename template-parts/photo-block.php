@@ -1,3 +1,6 @@
+<!-- Fichier PHP pour les block photos dans les fichier index.php et single-photo.php -->
+
+
 <!-- Section | Miniatures Personnalisées -->
 <div class="custom-post-thumbnails">
     <input type="hidden" name="page" value="1">

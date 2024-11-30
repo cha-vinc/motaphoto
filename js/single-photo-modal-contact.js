@@ -1,13 +1,17 @@
+/* Fichier JS pour l'ouverture du modal de contact pour single-photo.php */
+
 
 if( jQuery('#myBtn-photo').length ){
     // MODAL CONTACT - SINGLE-PHOTO
-    var photoModal = document.getElementById('myModal-photo');
+    var photoModal = document.getElementById('myModal');
     var photoBtn = document.getElementById("myBtn-photo");
+    var refmodal = document.getElementById("ref-photo");
     var photoSpan = document.getElementsByClassName("close-photo")[0];
 
     // Afficher le modal single-photo
     photoBtn.onclick = function() {
-        photoModal.style.display = "block";
+        photoModal.style.display = "flex";
+        refmodal.value = acfReferencePhoto;
     }
 
     // Masquer le modal single-photo
@@ -24,7 +28,8 @@ if( jQuery('#myBtn-photo').length ){
 /* Modale de contact - single photo - REF.PHOTO Pré-rempli */
     jQuery(document).ready(function($) {
         $("#myBtn-photo").on('click', function() {
-            $("#ref-photo").val(acfReferencePhoto);
+            console.log('good')
+            $("#ref-photo").val('azer');
             });
            
     });

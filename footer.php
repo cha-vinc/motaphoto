@@ -1,3 +1,6 @@
+<!-- Fichier PHP pour la lightbox et le footer -->
+
+
 <!-- Lightbox Photo -->
 <div class="lightbox-container">
     <span class="btn-close">X</span>
@@ -20,6 +23,7 @@
     </div>
 </div>
 
+<!-- Footer -->
 
 <footer>
     <nav class="footer-menu">

@@ -1,9 +1,12 @@
+<!-- Fichier PHP les thumbnails et sa navigation dans le fichier single-photo.php -->
+
+
 <div class="custom-post-thumbnail">
     <a href="<?php the_permalink(); ?>">
         <?php if (has_post_thumbnail()) : ?>
         <div class="thumbnail-wrapper" data-reference="<?php echo get_field('reference'); ?>">
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail("medium"); ?>
                 <!-- Section | Overlay Catalogue -->
                 <div class="thumbnail-overlay " >
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-eye.png" alt="Icône de l'œil"> <!-- Icône de l'œil | Informations sur la photo -->

@@ -362,7 +362,7 @@
 
     
     .contenu-principal{
-        height: calc(100vh + 200px);
+        height: auto;
     }
 
     .modal-content-photo {

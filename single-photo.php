@@ -1,3 +1,6 @@
+<!-- Fichier PHP pour les pages photos -->
+
+<!-- Insertion du header | Inclut le fichier header.php-->
 <?php 
 get_header(); ?>
 
@@ -161,6 +164,7 @@ get_header(); ?>
                 'post_type' => 'photo',
                 'posts_per_page' => 2,
                 'orderby' => 'rand',
+                'post__not_in' => array(get_the_ID()), // Exclut la photo actuelle
                 'tax_query' => array(
                     array(
                         'taxonomy' => 'categorie',
@@ -184,5 +188,5 @@ get_header(); ?>
 
 </main>
 
-
+<!-- Insertion du footer | Inclut le fichier footer.php-->
 <?php get_footer();?>

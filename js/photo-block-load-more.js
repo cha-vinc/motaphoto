@@ -1,3 +1,6 @@
+/* Fichier JS pour le bouton "Charger plus" / "Load more" */
+
+
 document.addEventListener('DOMContentLoaded', function() {
     let page = 2; // La page commence à 2 car la première est déjà chargée
 

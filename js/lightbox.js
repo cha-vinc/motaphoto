@@ -1,3 +1,6 @@
+/* Fichier JS pour la lightbox */
+
+
 jQuery(document).ready(function($) {
     let images = []; // Tableau des images valides sur la page
     let currentIndex = 0; // Index de l'image actuelle

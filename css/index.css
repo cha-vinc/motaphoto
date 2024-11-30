@@ -1,5 +1,6 @@
-/* IMAGE HERO - ACCUEIL */
-/* Style | Conteneur Hero Image */
+/* Fichier CSS pour le style de la page d'accueil et les filtres */
+
+/* Style du conteneur */
 .principal-head {
     position: relative;
     height: 100vh;
@@ -8,7 +9,7 @@
     padding: 0;
 }
 
-/* Style | Hero Image */
+/* Style de l'image de secours */
 .home-image {
     background-size: cover;
     background-position: center;
@@ -17,7 +18,7 @@
     background-image: url('/assets/images/fallback-hero.png'); /* Image de secours */
 }
 
-/* Style | Titre de l'Image */
+/* Style du titre Photographe Event */
 .home-image img {
     position: absolute;
     top: 50%;
@@ -27,7 +28,7 @@
     height: auto;
 }
 
-/*Style : Filtres*/
+/*Style : Filtres */
 
 .filtre-tri{
     max-width: 1126px;  
@@ -92,9 +93,9 @@
     color: black;
 }
 
-/*Enlève le point du li*/
+
 li::marker{
-    content:none;
+    content:none; /*Enlève le point du li*/
 }
 
 /*Style filtres au survol*/
@@ -137,6 +138,16 @@ img.icon-btn{
     height: 6px;
     padding-top: 6.5PX;
 }
+
+.icon-btn {
+    transition: transform 0.5s ease;
+}
+
+.icon-btn.rotated {
+    transform: rotate(180deg);
+    margin-top: 5px;
+}
+
 
 .tri-date{
     margin-left: 310px;
