@@ -76,7 +76,6 @@
     flex: 1;
     position: relative;
     width: 100%;
-    height: CALC(100vh - 64px - 118px - 20px);
 }
 
 /* Styles | Partie droite en version mobile */
@@ -358,6 +357,31 @@
     color: #fff;
 }
 
+/*Format tablette*/
+@media screen and (max-width: 1166px){
+    .left-container,
+    .left-contact,
+    .related-images{
+        padding-left: 30px;
+    }
+    .right-container,
+    .thumbnail-container,
+    .related-images{
+        padding-right: 30px;
+    }
+}
+
+
+/*Format mobile*/
+@media screen and (min-width: 769px) {
+    .right-container,
+    .photo {
+
+    height: CALC(100vh - 64px - 118px - 20px);
+}
+
+}
+
 @media screen and (max-width: 768px) {
 
     
@@ -423,16 +447,16 @@
         padding-top: 50px;
     }
 
-    /*.right-container,
     .photo{
-        max-height: 70vh;
+        display: flex;
+        justify-content: center;
     }
-    
 
-    .photo img {
-        height: calc(100vh + 64px);
-    }*/
- 
+    .photo img{
+        width: 80VW;
+    }
+
+
 
     .right-contact{
       display: none;

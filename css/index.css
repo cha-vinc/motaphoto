@@ -197,6 +197,20 @@ li.all-filter:hover {
     animation: slideDown 0.4s ease forwards;
 }
 
+/*Format tablette*/
+
+@media screen and (max-width: 1190px){
+    .filtre-tri{
+        padding-left: 40px;
+        padding-right:40px;
+    }
+
+    .custom-post-thumbnails{
+        padding-left:20px;
+        padding-right:20px;
+    }
+}
+
 
 
 /*Format mobile*/

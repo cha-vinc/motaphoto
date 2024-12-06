@@ -30,10 +30,23 @@
   margin-left: 18px;
 }
 
+.lightbox-block{
+  Height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /*Image de la lightbox*/
 .lightbox-img{
   display: flex;
-  height: 70vh;
+  height: 100%;
+  max-width: 60vw;
+}
+
+.middle-image{
+  width:100%;
+  object-fit: contain;
 }
 
 /*Navigation et bouton de la lightbox*/
@@ -49,6 +62,8 @@
   top: 10%;/* 20 PX*/
   right: 3%; /* 20PX*/
 }
+
+
 
 .left-arrow{
   justify-content: flex-start;
