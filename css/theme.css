@@ -267,6 +267,7 @@ footer {
 
     .close-button {
         position: fixed;
+        font-family: 'Montserrat';
         right: 10px; /* Ajustez si nécessaire */
         background: none;
         border: none;

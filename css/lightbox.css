@@ -50,28 +50,48 @@
 }
 
 /*Navigation et bouton de la lightbox*/
-.btn-close, .left-arrow, .right-arrow {
+.btn-close,.left-arrow, .right-arrow {
   cursor: pointer;
   color: white;
   font-size: 2em;
 }
 
-.btn-close {
+.btn-close{
   position: absolute;
-  font-family: 'Space Mono';
-  top: 10%;/* 20 PX*/
+  font-family: 'Montserrat';
+  top: 11%;/* 20 PX*/
   right: 3%; /* 20PX*/
 }
 
+/*Navigation précédentes et suivantes*/
 
-
-.left-arrow{
-  justify-content: flex-start;
-}
-
+.left-arrow,
 .right-arrow{
-  justify-content: flex-end;
+  display: flex;
+  align-items: center;
 }
+
+.text-arrow{
+  font-family: "Space Mono";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17.77px;
+  text-align: left;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+/*Pour que la flèche et le texte change en même temps*/
+.left-arrow:hover img.hover-arrow,
+.right-arrow:hover img.hover-arrow {
+  width: 34px; 
+}
+
+.left-arrow:hover p.text-arrow,
+.right-arrow:hover p.text-arrow {
+  font-weight: 700;
+}
+
 
 /*Référence et titre de la photo dans la lightbox*/
 .info-photo {
@@ -83,4 +103,11 @@
   font-family: 'Poppins';
   font-size: 14px;
   text-transform: uppercase; /*Ecriture en majuscule*/
+}
+
+
+@media screen and (max-width: 950px){
+  .text-arrow{
+    display:none;
+  }
 }

@@ -6,7 +6,8 @@
     <span class="btn-close">X</span>
     <div class="lightbox-wrapper">
         <div class="left-arrow">
-            <img class="hover-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/lightbox-prev.png" alt="Précédent">
+            <img class="hover-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/lightbox-arrow-left.png" alt="Précédent">
+            <p class="text-arrow">Précédente</p>
         </div>
         <div class="lightbox-block">
             <div class="lightbox-img">
@@ -18,7 +19,8 @@
             </div>
         </div>
         <div class="right-arrow">
-            <img class="hover-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/lightbox-next.png" alt="Suivant">
+            <p class="text-arrow">Suivante</p>
+            <img class="hover-arrow" src="<?php echo get_template_directory_uri(); ?>/assets/images/lightbox-arrow-right.png" alt="Suivant">
         </div>
     </div>
 </div>
