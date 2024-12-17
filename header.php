@@ -30,9 +30,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-
-
-
+        
         <nav class="header-menu">  
         <div class="mobile-header">
             <div class="mobile-logo">
@@ -53,7 +51,8 @@
 
             ]);?>
             <!--   Affiche le modal de contact-->
-            <?php include get_template_directory() . '/template-parts/modale-contact.php'; ?>
+            <button id="contact-button-header">Contact</button>
+            
         </ul>
         </nav>
 

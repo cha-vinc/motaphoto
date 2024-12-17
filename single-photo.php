@@ -91,8 +91,8 @@ get_header(); ?>
                 <p>Cette photo vous intéresse ?</p>
             </div>
             <div class="bouton-contact">
-                <?php include get_template_directory() . '/template-parts/contact-single-photo.php'; ?>
-                <?php
+                <button id="myBtn-photo">Contact</button>
+            <?php
                 // Récupère la valeur du champ personnalisé 'reference_photo' et la définit comme une variable JavaScript.
                 $reference_photo = get_field('reference');
                 if ($reference_photo) {

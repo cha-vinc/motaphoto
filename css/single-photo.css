@@ -358,7 +358,7 @@
 }
 
 /*Format tablette*/
-@media screen and (max-width: 1166px){
+@media screen and (min-width: 770px) and (max-width: 1166px){
     .left-container,
     .left-contact,
     .related-images{

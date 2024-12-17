@@ -1,6 +1,3 @@
-/* Fichier JS pour les filtres dans la page d'accueil */
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".filtre-tri .filtre-btn");
     const loadMoreButton = document.querySelector(".load-more-button");
@@ -9,22 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectedOrder = "DESC";
     let currentPage = 1;
 
+    // Gestion des boutons de filtre
     filterButtons.forEach(button => {
+        // Clic sur le bouton principal (ouvrir ou fermer le menu)
         button.addEventListener("click", function (event) {
+            // Ferme tous les autres menus
+            filterButtons.forEach(btn => {
+                if (btn !== button) btn.classList.remove("active");
+            });
+
+            // Ouvre ou ferme le menu actuel
             button.classList.toggle("active");
-            // Récupérer l'élément img.icon-btn associé
-            const icon = button.querySelector(".icon-btn");
-            if (icon) {
-                icon.classList.toggle("rotated");
-            }
-            event.stopPropagation();
+            event.stopPropagation(); // Empêche la propagation
         });
-    
+
+        // Clic sur une option
         button.querySelectorAll(".options li").forEach(option => {
-            option.addEventListener("click", function () {
+            option.addEventListener("click", function (event) {
                 const filterType = button.parentElement.classList[0];
                 const value = this.getAttribute("data-filter");
-    
+
                 // Mettre à jour la sélection
                 if (filterType === "filtre-categorie") {
                     selectedCategory = value;
@@ -36,25 +37,30 @@ document.addEventListener("DOMContentLoaded", function () {
                     selectedOrder = value;
                     button.querySelector(".main-option").textContent = this.textContent;
                 }
-    
-                // Fermez le menu après la sélection
+
+                // Fermer le menu après sélection
                 button.classList.remove("active");
-    
+
                 // Réinitialiser la page et charger les photos filtrées
                 currentPage = 1;
                 loadPhotosWithFilters();
+                event.stopPropagation(); // Empêche la propagation
             });
         });
     });
-    
 
-    // Gestion du clic sur le bouton "load more"
-    loadMoreButton.addEventListener("click", function () {
-        currentPage++;
-        loadPhotosWithFilters(currentPage);
+    // Ferme tous les menus si l'utilisateur clique en dehors
+    document.addEventListener("click", function () {
+        filterButtons.forEach(button => button.classList.remove("active"));
     });
 
-    
+    // Gestion du clic sur le bouton "load more"
+    if (loadMoreButton) {
+        loadMoreButton.addEventListener("click", function () {
+            currentPage++;
+            loadPhotosWithFilters(currentPage);
+        });
+    }
 
     function loadPhotosWithFilters(page = 1) {
         const data = {
@@ -80,22 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         });
-        
     }
 
     // Chargement initial des photos
     loadPhotosWithFilters();
-});
-
-// Ajout de l'écouteur d'événements sur les options du filtre
-document.querySelectorAll('.filtre-tri .options li').forEach(option => {
-    option.addEventListener('click', () => {
-        // Supprime la classe "selected" de toutes les options
-        document.querySelectorAll('.filtre-tri .options li').forEach(item => {
-            item.classList.remove('selected');
-        });
-
-        // Ajoute la classe "selected" à l'option cliquée
-        option.classList.add('selected');
-    });
 });

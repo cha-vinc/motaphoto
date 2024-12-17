@@ -101,7 +101,8 @@ header {
 ul#menu-main-menu,
 ul#menu-footer,
 .accueil-menu,
-.text-footer{
+.text-footer,
+#contact-button-header{
     text-transform: uppercase;
 }
 
@@ -193,7 +194,8 @@ footer {
     
     .header-logo img {
         max-width: 200px;
-        padding-left: 0;
+        padding:12.75px;
+
     }
     
     .mobile-menu-button {
@@ -250,7 +252,9 @@ footer {
     }
 
     .header-menu li a,
-    #contact-button-header {
+    #contact-button-header,
+    .header-menu li a:hover,
+    #contact-button-header:hover {
         font-family: 'Space mono';
         color:white;
         text-transform: uppercase;
@@ -258,8 +262,6 @@ footer {
         font-size: 44px;
         line-height: 90px;
         text-align: center;
-
-
     }
    
 

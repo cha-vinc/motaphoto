@@ -1,5 +1,7 @@
 <!-- Fichier PHP pour la lightbox et le footer -->
 
+<?php include get_template_directory() . '/template-parts/modale-contact.php'; ?>
+
 
 <!-- Lightbox Photo -->
 <div class="lightbox-container">

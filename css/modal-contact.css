@@ -23,11 +23,13 @@
 .modal-content {
     position: fixed;
     border: 5px solid #000000;
-    width: 70%; 
-    max-width: 600px; 
+    width: 90%;
+    max-width: 500px;
     height: auto;
-    max-height: 600PX; 
+    max-height: 600PX;
     background-color: #fff;
+    OVERFLOW: AUTO;
+    MARGIN-TOP: 20px;
     
 }
 
@@ -123,7 +125,7 @@ input[type=submit]:hover {
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
 .wpcf7 textarea {
-    width: 263px;
+    max-width: 263px;
     height: 20px;
     border-radius: 8px;
     border: 1px solid #B8BBC2;
@@ -144,9 +146,13 @@ input[type=submit]:hover {
     line-height: 18px;
     letter-spacing: 0em;
     text-align: left;
+    width: 100%;
+    display:inline-block;
+    box-sizing: border-box;
+    height: 30px;
 }
 
 /* Styles | Style d'Étiquette de Message pour le Contact Form 7 */
 .wpcf7 textarea[name="your-message"] {
-    height: 150px;
+    height: 130px;
 }
