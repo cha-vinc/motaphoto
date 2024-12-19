@@ -28,7 +28,7 @@ function motaphoto_enqueue_assets() {
     wp_enqueue_style('custom-modal-contact', get_template_directory_uri() . '/css/modal-contact.css', array(), '1.0');
     wp_enqueue_style('custom-photo-block', get_template_directory_uri() . '/css/photo-block.css', array(), '1.0');
     // Scripts
-    wp_enqueue_script('header-modal-contact', get_template_directory_uri() . '/js/header-modal-contact.js', array('jquery'), '1.1.1', true); // Ajout de 'jquery' et chargement dans le footer
+    wp_enqueue_script('modal-contact', get_template_directory_uri() . '/js/modal-contact.js', array('jquery'), '1.1.1', true); // Ajout de 'jquery' et chargement dans le footer
     wp_enqueue_script('menu-mobile', get_template_directory_uri() . '/js/menu-mobile.js', array('jquery'), '1.1.1', true);
     wp_enqueue_script('single-photo-thumbnail', get_template_directory_uri() . '/js/single-photo-thumbnail.js', array('jquery'), '1.1.1', true);
     wp_enqueue_script('lightbox', get_template_directory_uri() . '/js/lightbox.js', array('jquery'), '1.1.1', true);

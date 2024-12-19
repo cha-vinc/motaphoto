@@ -6,7 +6,10 @@ var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("contact-button-header");
+var btnsingle = document.getElementById("myBtn-photo");
 var refmodal = document.getElementById("ref-photo");
+var refphoto = document.getElementById("ph-reference");
+
 
 
 // Get the <span> element that closes the modal
@@ -17,6 +20,14 @@ btn.onclick = function() {
     modal.style.display = "flex";
     refmodal.value = "";
 
+}
+if(btnsingle){
+btnsingle.onclick = function() {
+    modal.style.display = "flex";
+        console.log(refphoto.innerText);
+    refmodal.value = refphoto.innerText;
+
+}
 }
 
 // When the user clicks on <span> (x), close the modal

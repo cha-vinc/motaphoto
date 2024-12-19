@@ -80,6 +80,7 @@ get_header(); ?>
                      <?php the_post_thumbnail('large'); ?>
             <?php endif; ?> 
             </div>
+            
         </div>
     </div>
 

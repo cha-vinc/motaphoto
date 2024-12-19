@@ -5,7 +5,7 @@
     <a href="<?php the_permalink(); ?>">
         <?php if (has_post_thumbnail()) : ?>
         <div class="thumbnail-wrapper" data-reference="<?php echo get_field('reference'); ?>">
-            <a href="<?php the_permalink(); ?>">
+            <a href="<?php the_permalink(); ?>" class="box">
                 <?php the_post_thumbnail("medium"); ?>
                 <!-- Section | Overlay Catalogue -->
                 <div class="thumbnail-overlay " >

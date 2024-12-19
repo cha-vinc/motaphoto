@@ -5,8 +5,8 @@ jQuery(document).ready(function($) {
     function loadImages() {
         images = [];
         $('.thumbnail-wrapper').each(function() {
-            const img = $(this).find('img');
-            const reference = $(this).data('reference'); // Récupère la référence depuis data-reference
+            const img = $(this).find('.box img');
+            const reference = $(this).data('reference');
             const category = $(this).find('.photo-info-right p').text(); // Récupère la catégorie
 
             if (img.attr('src')) {
@@ -16,6 +16,7 @@ jQuery(document).ready(function($) {
                     category: category
                 });
             }
+            console.log(images);
         });
     }
 
