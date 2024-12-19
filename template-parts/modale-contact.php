@@ -1,4 +1,5 @@
-<!-- Fichier PHP pour le modal de contact dans le fichier header.php & single-photo.php -->
+<!-- Fichier PHP pour le modal de contact dans les
+ fichier header.php & single-photo.php -->
 
 <div id="myModal" class="modal">
     <div class="modal-content">

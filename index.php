@@ -1,12 +1,10 @@
 <!-- Fichier PHP pour la page d'accueil du site -->
 
 <!-- Insertion du header | Inclut le fichier header.php-->
-<?php
-get_header();
-?>
+<?php get_header();?>
 
 <main>
-    <!-- Image d'en-tête  -->
+    <!-- Image du banner d'en-tête  -->
 <div class="principal-head">
     <?php
     // Sélection d'une photo aléatoire de la même catégorie
@@ -51,7 +49,6 @@ get_header();
             </ul>
         </li>
     </ul>
-    
     <!-- Formats -->
     <ul class="filtre-format">
         <li class="filtre-btn" data-type="format" data-filter="ALL">
@@ -68,7 +65,6 @@ get_header();
             </ul>
         </li>
     </ul>
-
     <!-- Trier par date -->
     <ul class="tri-date">
         <li class="filtre-btn " data-type="order" data-filter="ALL">
@@ -82,18 +78,11 @@ get_header();
         </li>
     </ul>
 </div>
-
-
 <!-- Bloc de photos / reprise du template part du fichier single-photo.php-->
 <div id="photo-container" >
     <?php include get_template_directory() . '/template-parts/photo-block.php'; ?>
 </div>
-
-
-
 </main>
 
 <!-- Insertion du footer | Inclut le fichier footer.php-->
-
-<?php get_footer(); 
-?>
+<?php get_footer();?>

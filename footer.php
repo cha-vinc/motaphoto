@@ -1,11 +1,7 @@
-<!-- Fichier PHP pour la lightbox et le footer -->
-
+<!-- Fichier PHP pour la modale de contact et la lightbox -->
 <?php include get_template_directory() . '/template-parts/modale-contact.php'; ?>
-
 <?php include get_template_directory() . '/template-parts/lightbox.php';?>
-
 <!-- Footer -->
-
 <footer>
     <nav class="footer-menu">
         <?php
@@ -16,9 +12,6 @@
         <p class="text-footer">Tous droits réservés</p>
     </nav>
 </footer>
-
 <?php wp_footer(); ?>
-
-
 </body>
 </html>

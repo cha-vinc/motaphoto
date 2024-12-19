@@ -1,4 +1,5 @@
-<!-- Lightbox Photo -->
+<!-- Fichier PHP pour la Lightbox -->
+
 <div class="lightbox-container">
     <span class="btn-close">X</span>
     <div class="lightbox-wrapper">
@@ -12,7 +13,7 @@
             </div>
             <div class="info-photo">
                 <span id="lightbox-reference" class="info-left"></span>
-                <span id="lightbox-category" class="info-right"></span> <!-- Affiche la catégorie -->
+                <span id="lightbox-category" class="info-right"></span> 
             </div>
         </div>
         <div class="right-arrow">

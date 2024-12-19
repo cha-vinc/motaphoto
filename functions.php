@@ -18,7 +18,6 @@ function register_footer_menu() {
 add_action( 'after_setup_theme', 'register_footer_menu' );
 
 
-
 function motaphoto_enqueue_assets() {
     // Styles
     wp_enqueue_style('theme-css', get_template_directory_uri() . '/css/theme.css', array(), '1.0');
@@ -76,8 +75,7 @@ function enqueue_infinite_pagination_js() {
 add_action('wp_enqueue_scripts', 'enqueue_infinite_pagination_js');
 
 
-
-
+//Fonction pour le bouton "Charger plus"
 function load_more_photos() {
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
@@ -134,6 +132,7 @@ function load_more_photos() {
 add_action('wp_ajax_load_more_photos', 'load_more_photos');
 add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
 
+/* Fonction pour les filtres de la page d'accueil */
 function my_ajax_filter_search() {
     $category = sanitize_text_field($_POST['category']);
     $format = sanitize_text_field($_POST['format']);

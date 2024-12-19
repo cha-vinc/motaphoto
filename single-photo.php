@@ -1,13 +1,11 @@
 <!-- Fichier PHP pour les pages photos -->
 
 <!-- Insertion du header | Inclut le fichier header.php-->
-<?php 
-get_header(); ?>
+<?php get_header(); ?>
 
 <main id="main" class="content-area">
     <section class ="contenu-principal">
     <div class="zone-contenu mobile-first">
-
         <!-- Informations de la Photo - Gauche-->
         <div class="left-container">
             <div class="left-contenu">
@@ -19,7 +17,6 @@ get_header(); ?>
                 if ($reference_photo) {
                     echo '<p>Référence : <span id="ph-reference">' . esc_html($reference_photo) . '</span></p>';
                 }
-
                 // Catégories de la photo
                 // Récupère les catégories associées à la photo actuelle.
                 $categories = get_the_terms(get_the_ID(), 'categorie');
@@ -80,7 +77,6 @@ get_header(); ?>
                      <?php the_post_thumbnail('large'); ?>
             <?php endif; ?> 
             </div>
-            
         </div>
     </div>
 
@@ -182,12 +178,9 @@ get_header(); ?>
             ?>
             <?php include get_template_directory() . '/template-parts/custom-photo-block.php'; ?>
         </div>
-
             <?php endwhile; ?>
             <?php wp_reset_postdata(); // Restaure les données originales des publications ?>
     </div>
-
 </main>
-
 <!-- Insertion du footer | Inclut le fichier footer.php-->
 <?php get_footer();?>
