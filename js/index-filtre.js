@@ -1,3 +1,5 @@
+/* Fichier JS pour les filtres de la page d'accueil */
+
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".filtre-tri .filtre-btn");
     const loadMoreButton = document.querySelector(".load-more-button");
