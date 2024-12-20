@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 const filterType = button.parentElement.classList[0];
                 const value = this.getAttribute("data-filter");
 
+                // Réinitialiser les autres options
+                button.querySelectorAll(".options li").forEach(opt => opt.classList.remove("selected"));
+
+                // Pour que le filtre choisi soit de la couleur rouge lorsque qu'on ouvre le menu déroulant
+                this.classList.add("selected");
+
                 // Mettre à jour la sélection
                 if (filterType === "filtre-categorie") {
                     selectedCategory = value;
