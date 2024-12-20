@@ -140,10 +140,10 @@
     top: 50%;
     left: 50%;
     border: 5px solid #000000;
-    width: 70%; /* Réduire la largeur */
+    width: 70%; 
     max-width: 600px; /* Limite la largeur maximale */
     height: auto;
-    max-height: 600PX; /* Limite la hauteur à 80% de la hauteur de l'écran */
+    max-height: 600PX; 
     background-color: #fff;
     
 }
@@ -376,19 +376,14 @@
 @media screen and (min-width: 769px) {
     .right-container,
     .photo {
-
     height: CALC(100vh - 64px - 118px - 20px);
 }
-
 }
 
-@media screen and (max-width: 768px) {
-
-    
+@media screen and (max-width: 768px) {   
     .contenu-principal{
         height: auto;
     }
-
     .modal-content-photo {
         max-width: 95%;
     }
@@ -399,31 +394,21 @@
         flex-direction: column;
         max-width: 65%;
     }
-
     .left-contenu{
         margin:50px;
     }
-
     #myBtn-photo{
         width: 65vw;
     }
-
     .zone-contact{
         justify-content: space-around;
     }
-   
-   
-
-
     .left-container, 
     .zone-contact{
         padding-top: 30PX;
         padding-bottom: 50PX;
 
     }
-
-
-
     .zone-contenu,
     .zone-contact,
     .left-container,
@@ -431,37 +416,25 @@
         flex-basis: 100%;
         max-width: 100%;
     }
-
-   
-
     .left-container h1 {
         font-size: 44px;
     }
-
     .zone-contenu.mobile-first {
         flex-direction: column-reverse;
-
     }
-
     .right-container{
         padding-top: 50px;
     }
-
     .photo{
         display: flex;
         justify-content: center;
     }
-
     .photo img{
         width: 80VW;
     }
-
-
-
     .right-contact{
       display: none;
     }
-
     .image-container {
         display: block;
     }
@@ -472,17 +445,8 @@
         margin-right: 0; /* Supprimer la marge droite pour l'espacement */
         margin-bottom: 10px; /* Ajouter une marge inférieure pour l'espacement */
     }
-
     .related-images h3{
         text-align: center;
-
     }
-
-
-
-    
-
-
-
 }
 

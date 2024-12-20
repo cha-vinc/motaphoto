@@ -1,6 +1,5 @@
 /* Fichier CSS pour le style du thème, Header et Footer */
 
-
 /* Styles | Global */
 html, body {
     background-color: #FFFFFF;
@@ -10,13 +9,11 @@ html, body {
     flex-direction: column;   
 }
 
-
 main {
     flex:1;
     padding: 57px 0 20px 0;
     font-family: 'Space Mono';
 }
-
 
 /* Styles | En-Tête */
 header {
@@ -37,7 +34,6 @@ header {
     max-width: 300px;
     padding-left: 70px;
 }
-
 
 /* Styles | Menu de l'En-Tête */
 .header-menu {
@@ -72,7 +68,6 @@ header {
 }
 
 /* Styles | Éléments de Liste du Menu de l'En-Tête et du Pied de Page */
-
 .header-menu li,
 .accueil-menu li,
 .footer-menu li{
@@ -133,7 +128,6 @@ ul#menu-footer,
 }
 
 /* Styles | Pied-de-page */
-
 footer {
     background-color: #fff;
     text-align: center;
@@ -148,7 +142,6 @@ footer {
     padding: 10px;
 }
 
-
 .bar {
     display: block;
     width: 27.42px;
@@ -160,7 +153,6 @@ footer {
 .close-button {
     display: none;
 }
-
 
 .mobile-menu-opened .close-button {
     display: block;
@@ -174,9 +166,7 @@ footer {
     display: none;
 }
 
-
 /* MODÈLE - ARTICLE */
-
 .main-content-post {
     margin: 0 auto;
     max-width: 800px;
@@ -184,24 +174,19 @@ footer {
 
 /* Styles | MOBILE - MENU */
 @media screen and (max-width: 768px) {
-    
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 15px;
     }
-    
     .header-logo img {
         max-width: 200px;
         padding:12.75px;
-
     }
-    
     .mobile-menu-button {
         display: block;
     }
-    
     .header-menu {
         position: fixed;
         top: 0;
@@ -215,7 +200,6 @@ footer {
         align-items: center;
         z-index: 1000;
         padding: 20px; /* Pour espacer les éléments */
-
     }
     
     .mobile-menu-opened .header-menu {
@@ -235,11 +219,7 @@ footer {
         box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.08);
         padding: 0 20px;
         z-index: 1010; /* Priorité au-dessus des autres éléments */
-
     }
-
-
-
 
     .header-menu ul {
         width: 100%;
@@ -264,9 +244,6 @@ footer {
         text-align: center;
     }
    
-
-
-
     .close-button {
         position: fixed;
         font-family: 'Montserrat';
@@ -278,10 +255,7 @@ footer {
         cursor: pointer;
     }
 
-
-
     /*FOOTER*/
-
     ul#menu-footer{
         display: flex;
         flex-direction: column ;
@@ -300,9 +274,9 @@ footer {
         flex-direction: column;
         margin-bottom: 35px;
     }
-
-    
 }
+
+/*Animation pour l'ouverture et fermeture du menu format mobile*/
 
 @keyframes slideRight {
     from {
